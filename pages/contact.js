@@ -3,6 +3,10 @@ import Layout from "../components/Layout"
 import ContactForm from '@/components/ContactForm';
 
 export default function Contact(){
+    const pdfButton = () => {
+        window.open('/privacy-policy.pdf', '_blank');
+    }
+
     return(
         <div>
             <Layout>
@@ -30,7 +34,7 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='m-auto'>
-                                    <button type='button' className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white'>個人情報保護方針・PDF　→</button>
+                                    <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white'>個人情報保護方針・PDF　→</button>
                                 </div>
                             </div>
                         </div>
