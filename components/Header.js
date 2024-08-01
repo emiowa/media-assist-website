@@ -13,19 +13,32 @@ export default function Header(){
 
   const router = useRouter();
 
+  const renderIndicator = (path) => {
+    if (router.pathname === path) {
+      return (
+        <img
+          src="/cat-paw-1.svg"
+          alt="Cat paw"
+          className="h-full sm:mx-auto my-auto w-5 h-5"
+        />
+      );
+    }
+    return null;
+  };
+
   return (
-    <nav className="bg-gradient-to-tr from-indigo-700 to-indigo-500">
-      <div className="mx-auto max-w-7xl px-2 sm:px-24">
+    <nav className='fixed top-0 left-0 bg-white bg-opacity-80 backdrop-blur-md z-10 w-full'>
+      <div className="mx-auto max-w-7xl px-2 sm:px-0">
         
         <div className="relative flex h-20 items-center justify-between">
           <div>
             <Link href='/'>
-              <Image src='/web-logo-1.svg' alt='logo' width={100} height={100}/>
+              <Image src='/web-logo-3.svg' alt='logo' width={90} height={90}/>
             </Link>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
-            <button type="button" onClick={toggleMobileMenu} className="relative inline-flex items-center justify-center rounded-md p-2 text-media-white hover:bg-media-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen ? 'true' : 'false'}>
+            <button type="button" onClick={toggleMobileMenu} className="relative inline-flex items-center justify-center rounded-md p-2 text-media-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen ? 'true' : 'false'}>
               <span className="absolute -inset-0.5"></span>
               <span className="sr-only">Open main menu</span>
               {/* Icon when menu is closed */}
@@ -40,11 +53,19 @@ export default function Header(){
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-14">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                <Link className={router.pathname === '/' ? 'rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/'>Home</Link>
-                <Link className={router.pathname === '/about/about-us' ? 'rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/about/about-us'>About</Link>
-                <Link className={router.pathname === '/contact' ? 'rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/contact'>Contact</Link>
+                <div className='flex'>
+                  {renderIndicator('/')}
+                  <Link href='/' className={`px-3 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
+                </div>
+                <div className='flex'>
+                  {renderIndicator('/about/about-us')}
+                  <Link href='/about/about-us' className={`px-3 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
+                </div>
+                <div className='flex'>
+                  <Link href='/contact' className={`rounded-md bg-indigo-600 px-3 py-2 text-lg text-media-white ${router.pathname === '/contact' ? 'font-bold' : 'font-normal hover:drop-shadow-md'}`} aria-current={router.pathname === 'contact' ? 'page' : undefined}>Contact</Link>
+                </div>
               </div>
             </div>
           </div>
@@ -53,11 +74,20 @@ export default function Header(){
 
       {/* Mobile menu, show/hide based on menu state */}
       <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
-        <div className="space-y-1 px-2 pb-3 pt-2">
+        <div className="z-10 mt-2 origin-top-right divide-y divide-gray-200 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none space-y-1 px-2 pb-3 pt-2">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-            <Link className={router.pathname === '/' ? 'block rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'block rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/'>Home</Link>
-            <Link className={router.pathname === '/about/about-us' ? 'block rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'block rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/about/about-us'>About</Link>
-            <Link className={router.pathname === '/contact' ? 'block rounded-md bg-media-black px-3 py-2 text-base font-medium text-media-white' : 'block rounded-md px-3 py-2 text-base font-normal text-media-white hover:bg-media-lightpurple hover:text-media-black'} aria-current='page' href='/contact'>Contact</Link>
+            <div className='flex justify-center'>
+              {renderIndicator('/')}
+              <Link href='/' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
+            </div>
+            <div className='flex justify-center'>
+              {renderIndicator('/about/about-us')}
+              <Link href='/about/about-us' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
+            </div>
+            <div className='flex justify-center'>
+              {renderIndicator('/contact')}
+              <Link href='/contact' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/contact' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/contact' ? 'page' : undefined}>Contact</Link>
+            </div>
         </div>
       </div>
     </nav>
