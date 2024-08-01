@@ -53,32 +53,32 @@ export default function Home(){
             <Layout>
                 <div>
                     <div className='h-screen flex flex-col justify-center items-center'>
-                        <p className='opacity-0 text-media-black font-black text-5xl pb-5 sm:text-6xl sm:pb-4 animateFadeFromDown'>Media Assist</p>
-                        <p className='opacity-0 text-media-black font-medium text-2xl sm:text-5xl animateFadeFromDownDelay'>みんなの「メディア」を作る会社</p>
+                        <p className='opacity-0 text-media-black font-black text-4xl pb-2 sm:text-6xl sm:pb-4 animateFadeFromDown'>Media Assist</p>
+                        <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay'>みんなの「メディア」を作る会社</p>
                     </div>
                     <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl sm:rounded-ss-bglg animateNotActive' ref={slideInRightRef1}>
                         <div className='text-center pb-10 pt-14 sm:pb-10 sm:pt-20'>
-                            <p className='text-media-white font-bold text-3xl pb-2 sm:text-5xl sm:pb-4'>私たちがお手伝いします</p>
-                            <p className='text-media-white font-medium text-3xl sm:text-5xl sm:font-medium'>サービスについて</p>
+                            <p className='text-media-white font-bold text-2xl pb-1 sm:text-5xl sm:pb-4'>私たちがお手伝いします</p>
+                            <p className='text-media-white font-medium text-2xl sm:text-5xl sm:font-medium'>サービスについて</p>
                         </div>
                         <div className='mx-auto max-w-7xl px-3 pb-10 sm:px-24 sm:pb-20'>
                             <div className='sm:flex justify-center'>
                                 <div className='px-1 py-2 drop-shadow-lg sm:px-4 sm:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-xl leading-normal text-center sm:font-medium'>映像制作・配信に掛かる企画、<br />立案、実施、運営及びそれらに<br />関するコンサルティング業務</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl'>映像制作・配信に掛かる企画、<br />立案、実施、運営及びそれらに<br />関するコンサルティング業務</p>
                                 </div>
                                 <div className='px-1 py-2 drop-shadow-lg sm:px-4 sm:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-xl leading-normal text-center sm:font-medium'>情報/電子機器関連システム<br />(ハードウェア、ソフトウェア)<br />事務用機器の導入支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl'>情報/電子機器関連システム<br />(ハードウェア、ソフトウェア)<br />事務用機器の導入支援</p>
                                 </div>
                             </div>
                             <div className='sm:flex justify-center items-center'>
                                 <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-xl text-center sm:font-medium'>Webサイト運営支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center sm:font-medium sm:text-xl'>Webサイト運営支援</p>
                                 </div>
                                 <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-xl leading-normal text-center sm:font-medium'>映像制作会社のお見積り相談、<br />ご紹介 等</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl'>映像制作会社のお見積り相談、<br />ご紹介 等</p>
                                 </div>
                                 <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-xl text-center sm:font-medium'>ITヘルプデスク支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center sm:font-medium sm:text-xl'>ITヘルプデスク支援</p>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ export default function Home(){
                             映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。<br />殊に、教育/研修向けコンテンツについては、丁寧・正確かつ効果のある内容が求められます。そのため、どの映像制作業者さんにお話をするか迷いがあったり、撮影費用の妥当性や依頼の仕方など、ご不明な点も多いとご相談をいただきます。弊社では、そのような事業者の皆さまのご相談に応じ、多数の関係先を通じ企画を実現するようにバックアップを行って参ります。</p>
                         </div>
                         <div className='animateNotActive' ref={fadeInUpRef2}>
-                            <p className='text-media-black text-2xl font-medium sm:pb-6 sm:text-3xl'>SDGs ゴール</p>
+                            <p className='text-media-black text-xl font-medium sm:pb-6 sm:text-3xl'>SDGs ゴール</p>
                             <div className='sm:flex'>
                                 {/* Image of SDG4 goal for laptop and desktop screens */}
                                 <div className='hidden justify-center sm:flex sm:items-center'>
