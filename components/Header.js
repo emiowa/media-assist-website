@@ -19,7 +19,7 @@ export default function Header(){
         <img
           src="/cat-paw-1.svg"
           alt="Cat paw"
-          className="h-full sm:mx-auto my-auto w-5 h-5"
+          className="h-full sm:mx-auto my-auto w-5"
         />
       );
     }
