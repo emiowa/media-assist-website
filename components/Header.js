@@ -19,7 +19,7 @@ export default function Header(){
         <img
           src="/cat-paw-1.svg"
           alt="Cat paw"
-          className="h-full sm:mx-auto my-auto w-5"
+          className="sm:absolute h-full my-auto w-5"
         />
       );
     }
@@ -53,15 +53,15 @@ export default function Header(){
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-14">
+              <div className="flex space-x-16">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                <div className='flex'>
+                <div className='flex relative'>
                   {renderIndicator('/')}
-                  <Link href='/' className={`px-3 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
+                  <Link href='/' className={`relative px-7 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
                 </div>
-                <div className='flex'>
+                <div className='flex relative'>
                   {renderIndicator('/about/about-us')}
-                  <Link href='/about/about-us' className={`px-3 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
+                  <Link href='/about/about-us' className={`relative px-7 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
                 </div>
                 <div className='flex'>
                   <Link href='/contact' className={`rounded-md bg-indigo-600 px-3 py-2 text-lg text-media-white ${router.pathname === '/contact' ? 'font-bold' : 'font-normal hover:drop-shadow-md'}`} aria-current={router.pathname === 'contact' ? 'page' : undefined}>Contact</Link>
