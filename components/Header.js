@@ -56,11 +56,11 @@ export default function Header(){
               <div className="flex space-x-16">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                 <div className='flex relative'>
-                  {renderIndicator('/')}
+                  {/* {renderIndicator('/')} */}
                   <Link href='/' className={`relative px-7 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
                 </div>
                 <div className='flex relative'>
-                  {renderIndicator('/about/about-us')}
+                  {/* {renderIndicator('/about/about-us')} */}
                   <Link href='/about/about-us' className={`relative px-7 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
                 </div>
                 <div className='flex'>
@@ -77,15 +77,15 @@ export default function Header(){
         <div className="z-10 mt-2 origin-top-right divide-y divide-gray-200 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none space-y-1 px-2 pb-3 pt-2">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             <div className='flex justify-center'>
-              {renderIndicator('/')}
+              {/* {renderIndicator('/')} */}
               <Link href='/' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
             </div>
             <div className='flex justify-center'>
-              {renderIndicator('/about/about-us')}
+              {/* {renderIndicator('/about/about-us')} */}
               <Link href='/about/about-us' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
             </div>
             <div className='flex justify-center'>
-              {renderIndicator('/contact')}
+              {/* {renderIndicator('/contact')} */}
               <Link href='/contact' className={`block px-3 py-2 text-lg text-media-black ${router.pathname === '/contact' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/contact' ? 'page' : undefined}>Contact</Link>
             </div>
         </div>

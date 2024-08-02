@@ -2,36 +2,9 @@ import React from 'react';
 import Layout from "../components/Layout"
 import Image from 'next/image';
 import {useRouter} from 'next/router';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import useIntersectionObserver from '../components/intersection-observer';
 
-const useIntersectionObserver = (elements, animationClass) => {
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(animationClass);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-  
-      elements.forEach((element) => {
-        if (element.current) {
-          observer.observe(element.current);
-        }
-      });
-  
-      return () => {
-        elements.forEach((element) => {
-          if (element.current) {
-            observer.unobserve(element.current);
-          }
-        });
-      };
-    }, [elements, animationClass]);
-  };
 
 export default function Home(){
     const router = useRouter();
@@ -40,12 +13,28 @@ export default function Home(){
         router.push('/about/about-us');
     }
 
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined'){
+            const handleResize = () => {
+                setIsLargeScreen(window.innerWidth >= 768);
+            };
+            window.addEventListener('resize', handleResize);
+            handleResize();
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
     const slideInRightRef1 = useRef(null);
     const fadeInUpRef1 = useRef(null);
     const fadeInUpRef2 = useRef(null);
     const fadeInUpRef3 = useRef(null);
 
-    useIntersectionObserver([slideInRightRef1], 'animateSlideFromRight');
+    // const animationClassForSlideRight = isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown';
+    // const animationClassForSlideLeft = isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown';
+
+    useIntersectionObserver([slideInRightRef1], isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown');
     useIntersectionObserver([fadeInUpRef1, fadeInUpRef2, fadeInUpRef3], 'animateFadeFromDown');
 
     return(

@@ -1,42 +1,33 @@
 import React from 'react';
 import Layout from "../../components/Layout"
 import Image from "next/image"
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import useIntersectionObserver from '../../components/intersection-observer';
 
-const useIntersectionObserver = (elements, animationClass) => {
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(animationClass);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-  
-      elements.forEach((element) => {
-        if (element.current) {
-          observer.observe(element.current);
-        }
-      });
-  
-      return () => {
-        elements.forEach((element) => {
-          if (element.current) {
-            observer.unobserve(element.current);
-          }
-        });
-      };
-    }, [elements, animationClass]);
-  };
 
 export default function AboutUs(){
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined'){
+            const handleResize = () => {
+                setIsLargeScreen(window.innerWidth >= 768);
+            };
+            window.addEventListener('resize', handleResize);
+            handleResize();
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
     const slideInLeftRef1 = useRef(null);
+    const slideInRightRef2 = useRef(null);
     const fadeInUpRef4 = useRef(null);
 
-    useIntersectionObserver([slideInLeftRef1], 'animateSlideFromLeft');
+    // const animationClassForSlideRight = isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown';
+    // const animationClassForSlideLeft = isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown';
+
+    useIntersectionObserver([slideInLeftRef1], isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown');
+    useIntersectionObserver([slideInRightRef2], isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown');
     useIntersectionObserver([fadeInUpRef4], 'animateFadeFromDown');
 
     return(
@@ -50,7 +41,7 @@ export default function AboutUs(){
                             <p className='opacity-0 text-media-black text-base font-normal leading-loose animateFadeFromDownDelay'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。
                             映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。<br />殊に、教育/研修向けコンテンツについては、丁寧・正確かつ効果のある内容が求められます。そのため、どの映像制作業者さんにお話をするか迷いがあったり、撮影費用の妥当性や依頼の仕方など、ご不明な点も多いとご相談をいただきます。弊社では、そのような事業者の皆さまのご相談に応じ、多数の関係先を通じ企画を実現するようにバックアップを行って参ります。</p>
                         </div>
-                        <div className="mx-auto my-14 bg-gray-300 w-64 h-64 sm:my-0 animateSlideFromRight">
+                        <div className="mx-auto my-14 bg-gray-300 w-64 h-64 sm:my-0 animateNotActive" ref={slideInRightRef2}>
                         </div>
                     </div>
                     <div className="bg-gradient-to-tr from-indigo-200 to-indigo-100 rounded-3xl drop-shadow-lg py-10 px-3 sm:px-0 sm:rounded-bglg animateNotActive" ref={slideInLeftRef1}>
