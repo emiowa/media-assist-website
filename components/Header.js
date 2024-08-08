@@ -3,12 +3,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcherMobile from './LanguageSwitcherMobile';
 
 export default function Header(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsOpen(false);
   };
 
   const [darkMode, setDarkMode] = useState(() => {
@@ -27,11 +39,11 @@ useEffect(() => {
       }        
       localStorage.setItem('darkMode', darkMode.toString());
     }
-}, [darkMode]);
+  }, [darkMode]);
 
-const toggleDarkMode = () => {
-    setDarkMode(prevMode => !prevMode);
-};
+  const toggleDarkMode = () => {
+      setDarkMode(prevMode => !prevMode);
+  };
 
   const router = useRouter();
 
@@ -52,6 +64,7 @@ const toggleDarkMode = () => {
     <nav className='fixed top-0 left-0 bg-white bg-opacity-80 backdrop-blur-md z-10 w-full shadow-md dark:bg-indigo-900 dark:bg-opacity-80'>
       <div className="mx-auto max-w-7xl px-2 sm:px-0">
         <div className="relative flex h-20 items-center justify-between">
+
           {/* Logo in light mode */}
           <div className='dark:hidden'>
             <Link href='/'>
@@ -64,6 +77,7 @@ const toggleDarkMode = () => {
               <Image src='/web-logo-1.svg' alt='logo' width={90} height={90}/>
             </Link>
           </div>
+
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
             <button type="button" onClick={toggleMobileMenu} className="relative inline-flex items-center justify-center rounded-md p-2 text-media-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen ? 'true' : 'false'}>
@@ -94,15 +108,21 @@ const toggleDarkMode = () => {
                 <div className='flex'>
                   <Link href='/contact' className={`rounded-md bg-gradient-to-tr from-indigo-600 to-indigo-500 px-3 py-2 text-lg text-media-white ${router.pathname === '/contact' ? 'font-bold' : 'font-normal hover:drop-shadow-md'}`} aria-current={router.pathname === 'contact' ? 'page' : undefined}>Contact</Link>
                 </div>
-                <div className='flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-300'>
-                  <button onClick={toggleDarkMode} className="text-media-black dark:text-media-white">{darkMode ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                  </svg>
-                    ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                  </svg>)}</button>
+                <div className='flex items-center justify-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-300'>
+                  <div>
+                    <button onClick={toggleDarkMode} className="text-media-black dark:text-media-white">{darkMode ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                      </svg>
+                      ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                      </svg>)}
+                    </button>
+                  </div>
+                  <div className='pl-10'>
+                    <LanguageSwitcher />
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,6 +159,11 @@ const toggleDarkMode = () => {
                 </svg><span className='px-4 text-media-black'>ライトモード</span>
                   </>
                   )}</button>
+              </div>
+            </div>
+            <div className='flex justify-center'>
+              <div className='w-full mx-10 flex justify-center pb-6'>
+                  <LanguageSwitcherMobile />
               </div>
             </div>
         </div>
