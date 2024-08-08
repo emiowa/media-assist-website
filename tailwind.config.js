@@ -8,6 +8,7 @@ module.exports = {
     './pages/contact.js',
     './components/ContactForm.js',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -20,6 +21,8 @@ module.exports = {
         'media-red': '#E62E2F',
         'media-orange': '#E6642E',
         'media-yellow': '#F0CC48',
+        'media-black-light' : '#0D1359',
+        'media-black-lighter' : '#1B26B1',
       },
       fontFamily: {
         sans: ['ZenMaruGothic', 'sans-serif'],
