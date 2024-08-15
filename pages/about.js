@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout"
 import Image from "next/image"
-import { createRef, useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
 import lottie from 'lottie-web';
 
