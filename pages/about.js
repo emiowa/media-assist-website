@@ -6,7 +6,7 @@ import useIntersectionObserver from '../components/intersection-observer';
 import lottie from 'lottie-web';
 
 export default function AboutUs(){
-    let animation1Container = createRef();
+    let animation1Container = useRef(null);
 
     useEffect(() => {
         const anim = lottie.loadAnimation({
