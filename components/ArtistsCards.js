@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const ArtistsCards = ({ illustration, pawCategories, artistName, pdfUrl }) => {
   const handleButtonClick = () => {
@@ -8,14 +9,14 @@ const ArtistsCards = ({ illustration, pawCategories, artistName, pdfUrl }) => {
   return (
     <div className='rounded-2xl w-80 h-auto drop-shadow-lg bg-white'>
         <div className='relative w-full h-96 overflow-hidden rounded-t-2xl'>
-            <img className='absolute inset-0 w-full h-full object-cover' src={illustration} alt={artistName} />
+            <Image className='absolute inset-0 w-full h-full object-cover' src={illustration} alt={artistName} />
         </div>
         <div className='flex justify-between p-6'>
             <div className='text-media-black'>
                 <h3 className='font-bold text-lg'>{artistName}</h3>
                 <div className='w-5 flex items-center gap-1'>
                     {pawCategories.map((pawCategory, index) => (
-                        <img key={index} src={pawCategory} alt={`paw-category-${index}.svg`} />
+                        <Image key={index} src={pawCategory} alt={`paw-category-${index}.svg`} />
                     ))}
                 </div>
             </div>

@@ -50,9 +50,11 @@ useEffect(() => {
   const renderIndicator = (path) => {
     if (router.pathname === path) {
       return (
-        <img
+        <Image
           src={darkMode ? "/cat-paw-3.svg" : "/cat-paw-1.svg"}
           alt="Cat paw"
+          width={20}
+          height={20}
           className="sm:relative right-1 h-full my-auto w-5"
         />
       );
