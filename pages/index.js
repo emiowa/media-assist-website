@@ -4,18 +4,19 @@ import Image from 'next/image';
 import {useRouter} from 'next/router';
 import { useEffect, useState, useRef } from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
-import en from '../locales/en';
-import sp from '../locales/sp';
-import jp from '../locales/jp';
+
+import jp from '../public/locales/jp/translation.json';
+import en from '../public/locales/en/translation.json';
+import sp from '../public/locales/sp/translation.json';
 
 
 export default function Home(){
     const router = useRouter();
     const {locale} = router;
-    const t = locale === 'jp' ? jp : (locale === 'en' ? en : sp);
+    const t = locale === 'jp' ? jp : locale === 'sp' ? sp : en;
 
     const aboutUsPageButton = () => {
-        router.push('/about/about-us');
+        router.push('/about');
     }
 
     const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -50,7 +51,7 @@ export default function Home(){
                 <div className='dark:bg-media-black'>
                     <div className='h-screen flex flex-col justify-center items-center'>
                         <p className='opacity-0 text-media-black font-black text-4xl pb-2 sm:text-6xl sm:pb-4 animateFadeFromDown dark:text-media-white'>Media Assist</p>
-                        <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                        <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay dark:text-media-white'>{t.slogan}</p>
                     </div>
                     <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl sm:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
                         <div className='text-center pb-10 pt-14 sm:pb-10 sm:pt-20'>

@@ -4,9 +4,11 @@ module.exports = {
     './components/Header.js',
     './components/Footer.js',
     './pages/index.js',
-    './pages/about/about-us.js',
+    './pages/about.js',
     './pages/contact.js',
+    './pages/artists.js',
     './components/ContactForm.js',
+    './components/ArtistsCards.js',
   ],
   darkMode: 'class',
   theme: {

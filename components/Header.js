@@ -51,9 +51,9 @@ useEffect(() => {
     if (router.pathname === path) {
       return (
         <img
-          src="/cat-paw-1.svg"
+          src={darkMode ? "/cat-paw-3.svg" : "/cat-paw-1.svg"}
           alt="Cat paw"
-          className="sm:absolute h-full my-auto w-5"
+          className="sm:relative right-1 h-full my-auto w-5"
         />
       );
     }
@@ -94,16 +94,24 @@ useEffect(() => {
             </button>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:block">
               <div className="flex space-x-16">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                 <div className='flex relative'>
-                  {/* {renderIndicator('/')} */}
-                  <Link href='/' className={`relative px-7 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
+                  {renderIndicator('/')}
+                  <Link href='/' className={`relative px-2 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
                 </div>
                 <div className='flex relative'>
-                  {/* {renderIndicator('/about/about-us')} */}
-                  <Link href='/about/about-us' className={`relative px-7 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
+                  {renderIndicator('/about')}
+                  <Link href='/about' className={`relative px-2 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/about' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about' ? 'page' : undefined}>About</Link>
+                </div>
+                <div className='flex relative'>
+                  {renderIndicator('/artists')}
+                  <Link href='/artists' className={`relative px-2 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/artists' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/artists' ? 'page' : undefined}>Artists</Link>
+                </div>
+                <div className='flex relative'>
+                  {renderIndicator('/news')}
+                  <Link href='/news' className={`relative px-2 py-2 text-lg text-media-black dark:text-media-white ${router.pathname === '/news' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/news' ? 'page' : undefined}>News</Link>
                 </div>
                 <div className='flex'>
                   <Link href='/contact' className={`rounded-md bg-gradient-to-tr from-indigo-600 to-indigo-500 px-3 py-2 text-lg text-media-white ${router.pathname === '/contact' ? 'font-bold' : 'font-normal hover:drop-shadow-md'}`} aria-current={router.pathname === 'contact' ? 'page' : undefined}>Contact</Link>
@@ -111,11 +119,11 @@ useEffect(() => {
                 <div className='flex items-center justify-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-300'>
                   <div>
                     <button onClick={toggleDarkMode} className="text-media-black dark:text-media-white">{darkMode ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.7" stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                       </svg>
                       ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.7" stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                       </svg>)}
                     </button>
@@ -135,26 +143,34 @@ useEffect(() => {
         <div className="z-10 pt-2 origin-top-right rounded-md bg-white bg-opacity-10 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none space-y-1 dark:bg-indigo-900 dark:bg-opacity-10">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             <div className='flex justify-center'>
-              {/* {renderIndicator('/')} */}
+              {renderIndicator('/')}
               <Link href='/' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>
             </div>
             <div className='flex justify-center'>
-              {/* {renderIndicator('/about/about-us')} */}
-              <Link href='/about/about-us' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/about/about-us' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about/about-us' ? 'page' : undefined}>About</Link>
+              {renderIndicator('/about')}
+              <Link href='/about' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/about' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/about' ? 'page' : undefined}>About</Link>
             </div>
             <div className='flex justify-center'>
-              {/* {renderIndicator('/contact')} */}
+              {renderIndicator('/artists')}
+              <Link href='/artists' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/artists' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/artists' ? 'page' : undefined}>Artists</Link>
+            </div>
+            <div className='flex justify-center'>
+              {renderIndicator('/news')}
+              <Link href='/news' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/news' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/news' ? 'page' : undefined}>News</Link>
+            </div>
+            <div className='flex justify-center'>
+              {renderIndicator('/contact')}
               <Link href='/contact' className={`block px-3 py-3 text-lg text-media-black dark:text-media-white ${router.pathname === '/contact' ? 'font-bold' : 'font-normal'}`} aria-current={router.pathname === '/contact' ? 'page' : undefined}>Contact</Link>
             </div>
             <div className='flex justify-center'>
               <div className='w-full mx-10 flex justify-center py-5 border-t border-slate-200 dark:border-slate-300'>
                 <button onClick={toggleDarkMode} className="flex text-media-black dark:text-media-white">{darkMode ? (<>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.7" stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                 </svg><span className='px-4 text-media-white'>ダークモード</span>
                 </>
                   ) : (<>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.7" stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                 </svg><span className='px-4 text-media-black'>ライトモード</span>
                   </>

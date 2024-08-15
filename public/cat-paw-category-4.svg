@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 113.39 113.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #867cc1;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_13">
+      <g>
+        <ellipse class="cls-1" cx="16.96" cy="49.22" rx="12.19" ry="14.82" transform="translate(-6.34 2.66) rotate(-7.57)"/>
+        <ellipse class="cls-1" cx="41.04" cy="25.57" rx="13.17" ry="16.01" transform="translate(-3.01 5.63) rotate(-7.57)"/>
+        <ellipse class="cls-1" cx="96.41" cy="49.22" rx="14.82" ry="12.19" transform="translate(32.98 136.93) rotate(-81.17)"/>
+        <path class="cls-1" d="M86.82,71.95c4.36,3.21,7.2,8.38,7.2,14.21,0,9.73-7.89,17.62-17.62,17.62-3.57,0-6.89-1.06-9.66-2.88-1.84-.93-5.42-2.44-10.15-2.49-5.38-.06-9.4,1.8-11.25,2.81-2.67,1.63-5.81,2.57-9.16,2.57-9.73,0-17.62-7.89-17.62-17.62,0-5.7,2.71-10.77,6.91-13.99,0,0,7.61-6.2,11.61-12.62,3.53-7.34,11.04-12.41,19.73-12.41s16.57,5.32,19.99,12.96c0,0,5.01,8.19,10.04,11.86"/>
+        <ellipse class="cls-1" cx="73.17" cy="26.03" rx="16.01" ry="13.17" transform="translate(30.51 90.92) rotate(-76.26)"/>
+      </g>
+    </g>
+  </g>
+</svg>
