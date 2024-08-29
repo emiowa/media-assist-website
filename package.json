@@ -2,7 +2,7 @@
   "name": "media-assist-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://mediaassist.co.jp/next",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
