@@ -1,22 +1,119 @@
 import React from 'react';
 import Layout from "../components/Layout"
 import Image from 'next/image';
+import Link from 'next/link';
 import {useRouter} from 'next/router';
-import { useEffect, useState, useRef } from 'react';
+import { createRef, useEffect, useState, useRef } from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
+import ArtistsCardsSmall from '../components/ArtistsCardsSmall';
+import { getAllPostsData } from '../lib/posts';
+import NewsArticles from '../components/NewsArticles';
+import { serialize } from 'next-mdx-remote/serialize';
+import lottie from 'lottie-web';
 
-import jp from '../public/locales/jp/translation.json';
-import en from '../public/locales/en/translation.json';
-import sp from '../public/locales/sp/translation.json';
+// import jp from '../public/locales/jp/translation.json';
+// import en from '../public/locales/en/translation.json';
+// import sp from '../public/locales/sp/translation.json';
 
 
-export default function Home(){
+
+export async function getStaticProps() {
+  const allPostsData = getAllPostsData();
+
+  const posts = await Promise.all(allPostsData.map(async post => {
+    const mdxSource = await serialize(post.content);
+    return {
+      ...post,
+      content: mdxSource,
+    };
+  }));
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const lastThreePosts = posts.slice(0, 3);
+
+  return {
+    props: {
+      allPostsData: lastThreePosts,
+    },
+  };
+}
+
+export default function Home({allPostsData}){
     const router = useRouter();
-    const {locale} = router;
-    const t = locale === 'jp' ? jp : locale === 'sp' ? sp : en;
 
-    const aboutUsPageButton = () => {
-        router.push('/about');
+    let animation3ContainerLight = useRef(null);
+    let animation3ContainerDark = useRef(null);
+
+    useEffect(() => {
+        const animLight = lottie.loadAnimation({
+            container: animation3ContainerLight.current,
+            render: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/animations/MA-website-animation3json.json'
+        })
+
+        return () => animLight.destroy();
+    }, [])
+
+    useEffect(() => {
+        const animDark = lottie.loadAnimation({
+            container: animation3ContainerDark.current,
+            render: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/animations/MA-website-animation3json-dark-version.json'
+        })
+
+        return () => animDark.destroy();
+    }, [])
+    // const {locale} = router;
+    // const [translations, setTranslations] = useState({});
+
+    // useEffect(() => {
+    //     const getTranslations = () => {
+    //         switch (locale){
+    //             case 'jp':
+    //                 return jp;
+    //             case 'en':
+    //                 return en;
+    //             case 'sp':
+    //                 default:
+    //                     return sp;
+    //         }
+    //     };
+
+    //     setTranslations(getTranslations());
+    // }, [locale]);
+
+    const recentEventsRef = useRef(null);
+    const postsRef = useRef(null);
+    const [isSticky, setIsSticky] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (recentEventsRef.current && postsRef.current) {
+          const recentEventsRect = recentEventsRef.current.getBoundingClientRect();
+          const postsRect = postsRef.current.getBoundingClientRect();
+  
+          // Check if the recent events section is visible and if the posts section is not fully visible
+          if (recentEventsRect.top <= 96 && postsRect.bottom > 0) {
+            setIsSticky(true);
+          } else {
+            setIsSticky(false);
+          }
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const artistsPageButton = () => {
+        router.push('/artists');
+    }
+
+    const newsPageButton = () => {
+        router.push('/news');
     }
 
     const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -49,10 +146,20 @@ export default function Home(){
         <div>
             <Layout>
                 <div className='dark:bg-media-black'>
-                    <div className='h-screen flex flex-col justify-center items-center'>
-                        <p className='opacity-0 text-media-black font-black text-4xl pb-2 sm:text-6xl sm:pb-4 animateFadeFromDown dark:text-media-white'>Media Assist</p>
-                        <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay dark:text-media-white'>{t.slogan}</p>
+                    <div className='h-screen flex flex-col justify-center items-center sm:pt-36'>
+                        <div className='flex flex-col items-center justify-center'>
+                            <p className='opacity-0 text-media-black font-bold text-4xl pb-2 animateFadeFromDown sm:text-6xl dark:text-media-white'>Media Assist</p>
+                            {/* <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
+                            <p className='opacity-0 text-media-black font-medium text-xl sm:text-3xl animateFadeFromDownDelay dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                        </div>
+                        <div className='flex justify-center items-center pt-10 sm:pt-0'>
+                            {/* Animation for light mode */}
+                            <div ref={animation3ContainerLight} className="hidden sm:block mx-auto sm:w-9/12 dark:hidden" />
+                            {/* Animation for dark mode */}
+                            <div ref={animation3ContainerDark} className="hidden mx-auto sm:w-9/12 dark:sm:block" />
+                        </div>
                     </div>
+                    
                     <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl sm:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
                         <div className='text-center pb-10 pt-14 sm:pb-10 sm:pt-20'>
                             <p className='text-media-white font-bold text-2xl pb-1 sm:text-5xl sm:pb-4'>私たちがお手伝いします</p>
@@ -80,42 +187,73 @@ export default function Home(){
                             </div>
                         </div>
                     </div>
-                    <div className='mx-auto max-w-7xl px-3 pt-20 pb-36 sm:px-24'>
+                    <div className='mx-auto max-w-7xl px-3 pt-10 pb-24 sm:pt-36 sm:pb-36 sm:px-24'>
                         <div className='pb-20 animateNotActive' ref={fadeInUpRef1}>
-                            <p className='text-media-black font-bold text-3xl pb-2 sm:text-5xl sm:pb-4 dark:text-media-white'>Media Assistについて</p>
-                            <p className='text-media-black text-base font-normal leading-loose dark:text-media-white'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。
-                            映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。<br />殊に、教育/研修向けコンテンツについては、丁寧・正確かつ効果のある内容が求められます。そのため、どの映像制作業者さんにお話をするか迷いがあったり、撮影費用の妥当性や依頼の仕方など、ご不明な点も多いとご相談をいただきます。弊社では、そのような事業者の皆さまのご相談に応じ、多数の関係先を通じ企画を実現するようにバックアップを行って参ります。</p>
-                        </div>
-                        {/* <h1>{t.hello}</h1> */}
-                        <div className='animateNotActive' ref={fadeInUpRef2}>
-                            <p className='text-media-black text-xl font-medium sm:pb-6 sm:text-3xl dark:text-media-white'>SDGs ゴール</p>
-                            <div className='sm:flex'>
-                                {/* Image of SDG4 goal for laptop and desktop screens */}
-                                <div className='hidden justify-center sm:flex sm:items-center'>
-                                    <Image
-                                        src='/E_WEB_04.png'
-                                        alt='Goal 4 SDGs'
-                                        width={300}
-                                        height={300}
-                                    />
-                                </div>
-                                <div className='sm:px-10'>
-                                    <p className='text-media-black text-base font-medium leading-loose pb-3 dark:text-media-white'>Goal 4 - 質の高い教育をみんなに</p>
-                                    {/* Image of SDG4 goal for mobile screens */}
-                                    <div className='flex justify-center pb-3 sm:hidden'>
-                                        <Image
-                                            src='/E_WEB_04.png'
-                                            alt='Goal 4 SDGs'
-                                            width={150}
-                                            height={150}
-                                        />
-                                    </div>
-                                    <p className='text-media-black text-base font-normal leading-loose dark:text-media-white'>弊社においては、デジタル映像を媒体とした教育コンテンツの支援を行い、判りやすい内容をあらゆるデバイスを経由して届く環境構築を試行します。また、教育という観点のみならず、人それぞれの求めるタイプに応じた情報へのアクセスを、協業のパートナー各社とともに提案していきます。</p>
-                                </div>
+                            <div>
+                                <h2 className='text-media-black text-2xl font-medium pb-6 sm:text-3xl dark:text-media-white'>
+                                    <button onClick={artistsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
+                                        <span className='flex items-center'>
+                                            <p className='m-0 font-bold'>Artists</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="size-6 ml-2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div className='grid grid-cols-1 gap-y-10 justify-items-center sm:grid-cols-3 sm:gap-y-24'>
+                                <ArtistsCardsSmall
+                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
+                                    artistName="tokitokoro"
+                                />
+
+                                <ArtistsCardsSmall
+                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
+                                    artistName="tokitokoro"
+                                />
+
+                                <ArtistsCardsSmall
+                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
+                                    artistName="tokitokoro"
+                                />
                             </div>
                         </div>
-                        <div className='flex justify-center pt-14 animateNotActive' ref={fadeInUpRef3}>
-                            <button type='button' className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' onClick={aboutUsPageButton}>もっと見る</button>
+                        <div className='animateNotActive' ref={fadeInUpRef2}>
+                            <div>
+                                <h2 className='text-media-black text-2xl font-medium pb-6 sm:text-3xl dark:text-media-white'>
+                                    <button onClick={newsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
+                                        <span className='flex items-center'>
+                                            <p className='m-0 font-bold'>News</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="size-6 ml-2">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div className='container mx-auto'>
+                                <div className='grid grid-cols-1 sm:grid-cols-3 sm:gap-16'>
+                                    <div className='col-span-2' ref={postsRef}>
+                                        {allPostsData.map(({ id, profilePicture, authorName, postDate, titleArticle, content, summary, hashtagCategory, linkHref }) => (
+                                            <div key={id}>
+                                                <NewsArticles
+                                                    profilePicture={profilePicture}
+                                                    authorName={authorName}
+                                                    postDate={postDate}
+                                                    titleArticle={titleArticle}
+                                                    summary={summary}
+                                                    linkHref={`/news?id=${id}#${id}`}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className={`hidden h-screen sm:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
+                                        <div className='rounded-2xl drop-shadow-lg bg-gradient-to-tr from-indigo-200 to-indigo-100 h-5/6 px-5 py-10'>
+                                            <h3 className='font-semibold text-2xl text-media-black'>今後のイベント</h3>
+                                        </div> 
+                                    </div>                
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

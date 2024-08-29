@@ -70,7 +70,7 @@ useEffect(() => {
           {/* Logo in light mode */}
           <div className='dark:hidden'>
             <Link href='/'>
-              <Image src='/web-logo-3.svg' alt='logo' width={90} height={90}/>
+              <Image src='/web-logo-5.svg' alt='logo' width={90} height={90}/>
             </Link>
           </div>
           {/* Logo in dark mode */}

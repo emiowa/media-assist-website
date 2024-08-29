@@ -3,9 +3,68 @@ import Layout from "../components/Layout"
 import Image from "next/image"
 import { createRef, useEffect, useState, useRef } from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
-import ArtistsCards from '@/components/ArtistsCards';
+import ArtistsCards from '../components/ArtistsCards';
+import FilterArtistsCards from '../components/FilterArtistsCards';
+
+const cardsData = [
+    {
+      id: 1,
+      illustration: "/sample1.jpg",
+      pawCategories: ["/cat-paw-category-1.svg", "/cat-paw-category-2.svg"],
+      artistName: "Artist One",
+      pdfUrl: "https://example.com/artist1.pdf",
+    },
+    {
+      id: 2,
+      illustration: "/sample2.jpg",
+      pawCategories: ["/cat-paw-category-2.svg", "/cat-paw-category-3.svg"],
+      artistName: "Artist Two",
+      pdfUrl: "https://example.com/artist2.pdf",
+    },
+    {
+      id: 3,
+      illustration: "/sample3.jpg",
+      pawCategories: ["/cat-paw-category-3.svg"],
+      artistName: "Artist Three",
+      pdfUrl: "https://example.com/artist3.pdf",
+    },
+    {
+      id: 4,
+      illustration: "/sample4.jpg",
+      pawCategories: ["/cat-paw-category-4.svg"],
+      artistName: "Artist Four",
+      pdfUrl: "https://example.com/artist4.pdf",
+    },
+  ];
+  
+  const categories = [
+    { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
+    { id: '2', label: 'マンガ家', icon: '/cat-paw-category-2.svg' },
+    { id: '3', label: '2Dアニメーター', icon: '/cat-paw-category-3.svg' },
+    { id: '4', label: '3Dアニメーター', icon: '/cat-paw-category-4.svg' },
+  ];
 
 export default function Artists(){
+const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // Handle category click
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId);
+  };
+
+  // Reset category filter
+  const resetCategory = () => {
+    setSelectedCategory(null);
+  };
+
+  // Filter cards based on the selected category
+  const filteredCards = selectedCategory
+    ? cardsData.filter(card =>
+        card.pawCategories.includes(
+          categories.find(category => category.id === selectedCategory)?.icon
+        )
+      )
+    : cardsData;
     // useEffect(() => {
     //     if (typeof window !== 'undefined'){
     //         const handleResize = () => {
@@ -34,62 +93,35 @@ export default function Artists(){
         <div>
             <Layout>
                 <div className='dark:bg-media-black'>
-                    <div className='mx-auto max-w-7xl px-3 sm:px-24'>
-                        <div className="pt-32 pb-20 sm:pb-0 sm:h-screen sm:grid sm:grid-cols-2 sm:items-center sm:pt-10">
-                            <div>
-                                <p className="opacity-0 text-media-black text-3xl font-bold pb-2 sm:text-5xl sm:pb-4 animateFadeFromDown dark:text-media-white">Media Assist</p>
-                                <p className='opacity-0 text-media-black font-medium text-xl pb-6 sm:text-4xl animateFadeFromDown dark:text-media-white'>みんなの「メディア」を作る会社</p>
-                                <p className='opacity-0 text-media-black text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。
-                                映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。<br />殊に、教育/研修向けコンテンツについては、丁寧・正確かつ効果のある内容が求められます。そのため、どの映像制作業者さんにお話をするか迷いがあったり、撮影費用の妥当性や依頼の仕方など、ご不明な点も多いとご相談をいただきます。弊社では、そのような事業者の皆さまのご相談に応じ、多数の関係先を通じ企画を実現するようにバックアップを行って参ります。</p>
+                    <div className='rounded-es-3xl sm:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 sm:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
+                        <div className='mx-auto max-w-7xl px-3 sm:px-24'>
+                            <div className="pt-12 pb-0 sm:grid sm:grid-cols-3 sm:items-center sm:pt-10">
+                                <div className='sm:col-span-2'>
+                                    <p className="opacity-0 text-media-white text-3xl font-bold pb-2 sm:text-5xl sm:pb-4 animateFadeFromDown dark:text-media-white">Artists</p>
+                                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>株式会社メディアアシストでは日本で活躍するマンガ家、イラストレーターの海外での活動のお手伝いをしております。お仕事の紹介や、編集者をはじめとする海外の出版社のスタッフとの連絡の通訳、翻訳や契約書の確認など、必要に応じて対応しております。<br/>現在は北米を中心に、アメリカのコミックを描くお仕事(マーベルやDC等)や北米発、日本の作家と組んだ英語圏向けのオリジナルのマンガの制作など、需要が増えてきております。海外でのお仕事にご興味のある皆様、是非、弊社へご連絡ください。<br />こちらでは、弊社がお手伝いさせていただている作家の皆さまをご紹介いたします。</p>
+                                </div>
                             </div>
+                            <div className='flex justify-center pt-5 sm:pt-14'>
+                                <FilterArtistsCards
+                                    categories={categories}
+                                    selectedCategory={selectedCategory}
+                                    handleCategoryClick={handleCategoryClick}
+                                    resetCategory={resetCategory}
+                                />
+                                </div>
                         </div>
-
-                        <div className='container mx-auto'>
+                    </div>
+                    <div className='mx-auto max-w-7xl px-3 sm:px-24'>
+                        <div className='container mx-auto pt-28'>
                             <div className='grid grid-cols-1 gap-y-10 pb-36 justify-items-center sm:grid-cols-3 sm:gap-y-24'>
-                                <ArtistsCards 
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    pawCategories={[
-                                        "/cat-paw-category-3.svg",
-                                        "/cat-paw-category-4.svg"
-                                    ]}
-                                    artistName="tokitokoro"
-                                    pdfUrl="https://example.com/artist-profile.pdf"/>
-                                
-                                <ArtistsCards 
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    pawCategories={[
-                                        "/cat-paw-category-1.svg"
-                                    ]}
-                                    artistName="tokitokoro"
-                                    pdfUrl="https://example.com/artist-profile.pdf"/>
-                                
-                                <ArtistsCards 
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    pawCategories={[
-                                        "/cat-paw-category-1.svg",
-                                        "/cat-paw-category-2.svg",
-                                        "/cat-paw-category-3.svg",
-                                        "/cat-paw-category-4.svg"
-                                    ]}
-                                    artistName="tokitokoro"
-                                    pdfUrl="https://example.com/artist-profile.pdf"/>
-
-                                <ArtistsCards 
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    pawCategories={[
-                                        "/cat-paw-category-1.svg"
-                                    ]}
-                                    artistName="tokitokoro"
-                                    pdfUrl="https://example.com/artist-profile.pdf"/>
-
-                                <ArtistsCards 
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    pawCategories={[
-                                        "/cat-paw-category-3.svg",
-                                        "/cat-paw-category-4.svg"
-                                    ]}
-                                    artistName="tokitokoro"
-                                    pdfUrl="https://example.com/artist-profile.pdf"/>                                
+                                {filteredCards.map(card => (
+                                    <ArtistsCards
+                                        key={card.id}
+                                        illustration={card.illustration}
+                                        artistName={card.artistName}
+                                        pawCategories={card.pawCategories}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
