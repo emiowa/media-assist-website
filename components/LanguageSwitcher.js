@@ -37,7 +37,7 @@ const LanguageSwitcherDropdown = () => {
 
   return (
     <div className="relative inline-block text-left">
-      <button onClick={toggleDropdown} className="flex justify-center items-center text-media-black focus:outline-none dark:text-media-white">
+      <button onClick={toggleDropdown} aria-label="Language switcher" className="flex justify-center items-center text-media-black focus:outline-none dark:text-media-white">
         <LanguageSwitcherDropdownIcon />
       </button>
       {isOpen && (
