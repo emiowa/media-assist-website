@@ -52,41 +52,41 @@ export default function Contact(){
         <div>
             <Layout>
                 <div className='dark:bg-media-black'>
-                    <div className='mx-auto max-w-7xl px-3 sm:px-24'>
-                        <div className='pt-32 sm:my-auto sm:h-screen sm:flex sm:flex-col sm:justify-center'>
+                    <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
+                        <div className='pt-32 md:my-auto md:h-screen md:flex md:flex-col md:justify-center'>
                             <div className='opacity-0 text-center animateFadeFromDown'>
-                                <p className="text-media-black text-2xl font-bold pb-2 sm:text-5xl sm:pb-4 sm:pt-10 dark:text-media-white">個人情報の取り扱いについて</p>
-                                <p className='text-media-black text-xl font-medium pb-8 sm:text-4xl sm:pb-12 dark:text-media-white'>個人情報保護方針</p>
+                                <p className="text-media-black text-2xl font-bold pb-2 md:text-5xl md:pb-4 md:pt-10 dark:text-media-white">個人情報の取り扱いについて</p>
+                                <p className='text-media-black text-xl font-medium pb-8 md:text-4xl md:pb-12 dark:text-media-white'>個人情報保護方針</p>
                             </div>
-                            <div className='opacity-0 mx-auto w-full bg-gradient-to-tr from-indigo-100 to-indigo-200 drop-shadow-lg rounded-xl py-10 sm:w-4/5 sm:rounded-bglg animateFadeFromDownDelay dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
-                                <div className='sm:grid sm:grid-cols-2 sm:mx-auto'>
-                                    <div className='flex flex-col justify-center items-center sm:mx-auto'>
-                                        <div className='pb-8 sm:pb-10'>
-                                            <p className='text-media-black font-medium text-xl sm:text-2xl dark:text-media-white'>株式会社</p>
-                                            <p className='text-media-black font-bold text-2xl sm:text-4xl dark:text-media-white'>メディアアシスト</p>
+                            <div className='opacity-0 mx-auto w-full bg-gradient-to-tr from-indigo-100 to-indigo-200 drop-shadow-lg rounded-xl py-10 lg:w-4/5 lg:rounded-bglg animateFadeFromDownDelay dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
+                                <div className='md:grid md:grid-cols-2 md:mx-auto'>
+                                    <div className='flex flex-col justify-center items-center md:mx-auto'>
+                                        <div className='pb-8 md:pb-10'>
+                                            <p className='text-media-black font-medium text-xl md:text-2xl dark:text-media-white'>株式会社</p>
+                                            <p className='text-media-black font-bold text-2xl md:text-4xl dark:text-media-white'>メディアアシスト</p>
                                         </div>
-                                        <div className='pb-6 sm:pb-10'>
-                                            <p className='text-media-black text-base sm:text-lg dark:text-media-white'>制定日　2023年 5月 1日</p>
-                                            <p className='text-media-black text-base sm:text-lg dark:text-media-white'>最終改定日　2023年 5月 1日</p>
+                                        <div className='pb-6 md:pb-10'>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>制定日　2023年 5月 1日</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>最終改定日　2023年 5月 1日</p>
                                         </div>
-                                        <div className='pb-10 sm:pb-0'>
-                                            <p className='text-media-black text-base sm:text-lg dark:text-media-white'>株式会社メディアアシスト</p>
-                                            <p className='text-media-black text-base sm:text-lg dark:text-media-white'>代表取締役　　松城　麻以子</p>
-                                            <p className='text-media-black text-base sm:text-lg dark:text-media-white'>inquiry@icds-media.co.jp</p>
+                                        <div className='pb-10 md:pb-0'>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>株式会社メディアアシスト</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>代表取締役　　松城　麻以子</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>inquiry@icds-media.co.jp</p>
                                         </div>
                                     </div>
                                     {/* Button for laptop and desktop screens */}
-                                    <div className='hidden sm:flex sm:m-auto'>
+                                    <div className='hidden md:flex md:m-auto'>
                                         <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600'>個人情報保護方針・PDF　→</button>
                                     </div>
                                     {/* Button for mobile screens */}
-                                    <div className='flex justify-center sm:hidden'>
+                                    <div className='flex justify-center md:hidden'>
                                         <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600'>個人情報保護方針・PDF　→</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='sm:grid sm:grid-cols-4 sm:gap-4'>
+                        <div className='md:grid md:grid-cols-4 md:gap-4'>
                             <div className='col-start-1 col-span-2 flex flex-col drop-shadow-lg animateNotActive' ref={fadeInUpRef5}>
                                 <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 w-20 h-20 rounded-full mx-auto translate-y-10'>
                                     <div className='h-full flex justify-center items-center'>
@@ -96,8 +96,8 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
-                                    <div className='px-3 pb-5 sm:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 sm:text-xl dark:text-media-white'>個人情報の取得・利用・提供</p>
+                                    <div className='px-3 pb-5 md:px-5 flex-grow'>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>個人情報の取得・利用・提供</p>
                                         <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は、円滑な企業活動を目的とした特定の範囲内において個人情報を適正に取得・利用し、目的外利用は認めないものとします。目的外利用を未然に防ぐ取り組みを行いつつ、利用が判明した場合には内規に従い厳正なる措置を講じます。<br />また、当社事業活動の中で外部に提供が必要となった個人情報については、その保有者への事前の承諾を得た場合のみ可能といたします。</p>
                                     </div>
                                 </div>
@@ -111,11 +111,11 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
-                                    <div className='px-3 pb-5 sm:px-5 flex-grow'>
+                                    <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden sm:flex sm:text-media-black sm:font-medium sm:justify-center sm:pb-5 sm:pt-16 sm:text-xl dark:text-media-white'>個人情報の取り扱いに関する法令その他規範の遵守</p>
+                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報の取り扱いに関する法令その他規範の遵守</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 sm:hidden dark:text-media-white'>個人情報の取り扱いに関する<br />法令その他規範の遵守</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報の取り扱いに関する<br />法令その他規範の遵守</p>
                                         <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は以下の法令を原則に、国及び自治体の定める各種法令に従い、その範囲内において個人情報を取り扱うものといたします。<br />「個人情報の保護に関する法律」(平成十五年法律第五十七号)<br />「行政手続における特定の個人を識別するための番号の利用等に関する法律」(平成二十五年法律第二十七号)</p>
                                     </div>
                                 </div>
@@ -129,11 +129,11 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
-                                    <div className='px-3 pb-5 sm:px-5 flex-grow'>
+                                    <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden sm:flex sm:text-media-black sm:font-medium sm:justify-center sm:pb-5 sm:pt-16 sm:text-xl dark:text-media-white'>個人情報の漏えい、滅失又はき損の防止及び是正</p>
+                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報の漏えい、滅失又はき損の防止及び是正</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 sm:hidden dark:text-media-white'>個人情報の漏えい、<br />滅失又はき損の防止及び是正</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報の漏えい、<br />滅失又はき損の防止及び是正</p>
                                         <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は、個人情報への不正アクセス、個人情報の漏えい、滅失又はき損に対し、適切な予防策ならびに是正策を講じます。</p>
                                     </div>
                                 </div>
@@ -147,8 +147,8 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
-                                    <div className='px-3 pb-5 sm:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 sm:text-xl dark:text-media-white'>苦情及び相談への対応</p>
+                                    <div className='px-3 pb-5 md:px-5 flex-grow'>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>苦情及び相談への対応</p>
                                         <p className='text-media-black text-base leading-loose dark:text-media-white'>当社の個人情報の取扱い及び個人情報保護マネジメントシステムに関する苦情・相談には、受付次第、適切かつ迅速に対応を行います。</p>
                                     </div>
                                 </div>
@@ -162,34 +162,43 @@ export default function Contact(){
                                     </div>
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl dark:bg-media-black dark:border-media-white'>
-                                    <div className='px-3 pb-5 sm:px-5'>
+                                    <div className='px-3 pb-5 md:px-5'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden sm:flex sm:text-media-black sm:font-medium sm:justify-center sm:pb-5 sm:pt-16 sm:text-xl dark:text-media-white'>個人情報保護マネジメントシステムの継続的改善</p>
+                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報保護マネジメントシステムの継続的改善</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 sm:hidden dark:text-media-white'>個人情報保護<br />マネジメントシステムの継続的改善</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報保護<br />マネジメントシステムの継続的改善</p>
                                         <p className='text-media-black text-base leading-loose dark:text-media-white'>当社において個人情報の取り扱いを適正なものとするため、個人情報マネジメントシステムを構築・運用し、定期的な従業者教育、監査の実施により継続的な改善に努めていきます。</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='pt-28'>
-                            <p className='text-media-black font-medium text-2xl pb-6 sm:text-3xl dark:text-media-white'>お問い合わせ</p>
+                            <p className='text-media-black font-medium text-2xl pb-6 md:text-3xl dark:text-media-white'>お問い合わせ</p>
                             <p className='text-media-black leading-loose pb-12 dark:text-media-white'>お問い合わせいただきました件については３営業日以内にご案内の予定です。<br />ご案内までお待ちいただければ幸いです。</p>
-                            {/* Inquiry section for laptop and desktop screens */}
-                            <div className='hidden sm:pb-36 sm:grid sm:grid-cols-2 sm:gap-10'>
-                                <div className='col-start-1 col-span-1 sm:pb-0'>
+                            {/* Inquiry section for desktop screens */}
+                            <div className='hidden xl:pb-36 xl:grid xl:grid-cols-2 xl:gap-10'>
+                                <div className='col-start-1 col-span-1 xl:pb-0'>
                                     <ContactForm />
                                 </div>
-                                <div className='hidden sm:grid sm:col-start-2 sm:col-span-1'>
+                                <div className='hidden xl:grid xl:col-start-2 xl:col-span-1'>
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2290.2377579138565!2d139.71831197764615!3d35.72903935196922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6f134fd653%3A0x51eb1d42c77222c2!2sSunshine%20City!5e0!3m2!1ses!2sjp!4v1721983450406!5m2!1ses!2sjp" width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
-                            {/* Inquiry section for mobile screens */}
-                            <div className='pb-36 sm:hidden'>
-                                <div className='flex justify-center pb-12 sm:hidden'>
+                            {/* Inquiry section for laptop screens */}
+                            <div className='hidden lg:pb-36 lg:grid lg:grid-cols-2 lg:gap-10 xl:hidden'>
+                                <div className='col-start-1 col-span-1 lg:pb-0'>
+                                    <ContactForm />
+                                </div>
+                                <div className='hidden lg:grid lg:col-start-2 lg:col-span-1 lg:place-content-center'>
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.888082932333!2d139.71696657568938!3d35.728970872571885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6f134fd653%3A0x51eb1d42c77222c2!2sSunshine%20City!5e0!3m2!1ses!2sjp!4v1722303158518!5m2!1ses!2sjp" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
-                                <div className='col-start-1 col-span-1 sm:pb-0'>
+                            </div>
+                            {/* Inquiry section for mobile screens */}
+                            <div className='pb-36 lg:hidden'>
+                                <div className='flex justify-center pb-12'>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.888082932333!2d139.71696657568938!3d35.728970872571885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6f134fd653%3A0x51eb1d42c77222c2!2sSunshine%20City!5e0!3m2!1ses!2sjp!4v1722303158518!5m2!1ses!2sjp" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <div className='col-start-1 col-span-1'>
                                     <ContactForm />
                                 </div>
                             </div>

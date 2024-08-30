@@ -146,51 +146,51 @@ export default function Home({allPostsData}){
         <div>
             <Layout>
                 <div className='dark:bg-media-black'>
-                    <div className='h-screen flex flex-col justify-center items-center sm:pt-36'>
+                    <div className='h-screen flex flex-col justify-center items-center md:pt-36'>
                         <div className='flex flex-col items-center justify-center'>
-                            <p className='opacity-0 text-media-black font-bold text-4xl pb-2 animateFadeFromDown sm:text-6xl dark:text-media-white'>Media Assist</p>
-                            {/* <p className='opacity-0 text-media-black font-medium text-xl sm:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
-                            <p className='opacity-0 text-media-black font-medium text-xl sm:text-3xl animateFadeFromDownDelay dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                            <p className='opacity-0 text-media-black font-bold text-4xl pb-2 animateFadeFromDown md:text-6xl dark:text-media-white'>Media Assist</p>
+                            {/* <p className='opacity-0 text-media-black font-medium text-xl md:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
+                            <p className='opacity-0 text-media-black font-medium text-xl md:text-3xl animateFadeFromDownDelay dark:text-media-white'>みんなの「メディア」を作る会社</p>
                         </div>
-                        <div className='flex justify-center items-center pt-10 sm:pt-0'>
+                        <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
-                            <div ref={animation3ContainerLight} className="hidden sm:block mx-auto sm:w-9/12 dark:hidden" />
+                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-9/12 dark:hidden" />
                             {/* Animation for dark mode */}
-                            <div ref={animation3ContainerDark} className="hidden mx-auto sm:w-9/12 dark:sm:block" />
+                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-9/12 dark:md:block" />
                         </div>
                     </div>
                     
-                    <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl sm:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
-                        <div className='text-center pb-10 pt-14 sm:pb-10 sm:pt-20'>
-                            <p className='text-media-white font-bold text-2xl pb-1 sm:text-5xl sm:pb-4'>私たちがお手伝いします</p>
-                            <p className='text-media-white font-medium text-2xl sm:text-5xl sm:font-medium'>サービスについて</p>
+                    <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl lg:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
+                        <div className='text-center pb-10 pt-14 md:pb-10 md:pt-20'>
+                            <p className='text-media-white font-bold text-2xl pb-1 md:text-4xl lg:text-5xl md:pb-2 lg:pb-4'>私たちがお手伝いします</p>
+                            <p className='text-media-white font-medium text-2xl md:text-4xl lg:text-5xl md:font-medium'>サービスについて</p>
                         </div>
-                        <div className='mx-auto max-w-7xl px-3 pb-10 sm:px-24 sm:pb-20'>
-                            <div className='sm:flex justify-center'>
-                                <div className='px-1 py-2 drop-shadow-lg sm:px-4 sm:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作・配信に掛かる企画、<br />立案、実施、運営及びそれらに<br />関するコンサルティング業務</p>
+                        <div className='mx-auto max-w-7xl px-3 pb-10 md:px-10 lg:px-24 lg:pb-20'>
+                            <div className='lg:flex justify-center'>
+                                <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作・配信に掛かる企画、<br />立案、実施、運営及びそれらに<br />関するコンサルティング業務</p>
                                 </div>
-                                <div className='px-1 py-2 drop-shadow-lg sm:px-4 sm:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>情報/電子機器関連システム<br />(ハードウェア、ソフトウェア)<br />事務用機器の導入支援</p>
+                                <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>情報/電子機器関連システム<br />(ハードウェア、ソフトウェア)<br />事務用機器の導入支援</p>
                                 </div>
                             </div>
-                            <div className='sm:flex justify-center items-center'>
-                                <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center sm:font-medium sm:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>Webサイト運営支援</p>
+                            <div className='lg:flex justify-center items-center'>
+                                <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>Webサイト運営支援</p>
                                 </div>
-                                <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center sm:font-medium sm:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作会社のお見積り相談、<br />ご紹介 等</p>
+                                <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作会社のお見積り相談、<br />ご紹介 等</p>
                                 </div>
-                                <div className='px-1 py-2 sm:px-4 sm:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center sm:font-medium sm:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>ITヘルプデスク支援</p>
+                                <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>ITヘルプデスク支援</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='mx-auto max-w-7xl px-3 pt-10 pb-24 sm:pt-36 sm:pb-36 sm:px-24'>
+                    <div className='mx-auto max-w-7xl px-3 pt-10 pb-24 md:pt-20 lg:pt-36 lg:pb-36 md:px-10 lg:px-24'>
                         <div className='pb-20 animateNotActive' ref={fadeInUpRef1}>
                             <div>
-                                <h2 className='text-media-black text-2xl font-medium pb-6 sm:text-3xl dark:text-media-white'>
+                                <h2 className='text-media-black text-2xl font-medium pb-6 md:text-3xl dark:text-media-white'>
                                     <button onClick={artistsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
                                         <span className='flex items-center'>
                                             <p className='m-0 font-bold'>Artists</p>
@@ -201,26 +201,26 @@ export default function Home({allPostsData}){
                                     </button>
                                 </h2>
                             </div>
-                            <div className='grid grid-cols-1 gap-y-10 justify-items-center sm:grid-cols-3 sm:gap-y-24'>
+                            <div className='flex flex-col items-center md:flex-row'>
                                 <ArtistsCardsSmall
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    artistName="tokitokoro"
+                                    illustration="/sample1.jpg"
+                                    artistName="Artist1"
                                 />
 
                                 <ArtistsCardsSmall
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    artistName="tokitokoro"
+                                    illustration="/sample2.jpg"
+                                    artistName="Artist2"
                                 />
 
                                 <ArtistsCardsSmall
-                                    illustration="/OsakaComiccon-tokitokoro2-(350dpi).jpg"
-                                    artistName="tokitokoro"
+                                    illustration="/sample1.jpg"
+                                    artistName="Artist3"
                                 />
                             </div>
                         </div>
                         <div className='animateNotActive' ref={fadeInUpRef2}>
                             <div>
-                                <h2 className='text-media-black text-2xl font-medium pb-6 sm:text-3xl dark:text-media-white'>
+                                <h2 className='text-media-black text-2xl font-medium pb-6 md:text-3xl dark:text-media-white'>
                                     <button onClick={newsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
                                         <span className='flex items-center'>
                                             <p className='m-0 font-bold'>News</p>
@@ -232,8 +232,8 @@ export default function Home({allPostsData}){
                                 </h2>
                             </div>
                             <div className='container mx-auto'>
-                                <div className='grid grid-cols-1 sm:grid-cols-3 sm:gap-16'>
-                                    <div className='col-span-2' ref={postsRef}>
+                                <div className='flex flex-col'>
+                                    <div className='' ref={postsRef}>
                                         {allPostsData.map(({ id, profilePicture, authorName, postDate, titleArticle, content, summary, hashtagCategory, linkHref }) => (
                                             <div key={id}>
                                                 <NewsArticles
@@ -247,11 +247,11 @@ export default function Home({allPostsData}){
                                             </div>
                                         ))}
                                     </div>
-                                    <div className={`hidden h-screen sm:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
+                                    {/* <div className={`hidden h-screen md:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
                                         <div className='rounded-2xl drop-shadow-lg bg-gradient-to-tr from-indigo-200 to-indigo-100 h-5/6 px-5 py-10'>
                                             <h3 className='font-semibold text-2xl text-media-black'>今後のイベント</h3>
                                         </div> 
-                                    </div>                
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

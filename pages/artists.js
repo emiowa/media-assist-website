@@ -93,15 +93,15 @@ const [selectedCategory, setSelectedCategory] = useState(null);
         <div>
             <Layout>
                 <div className='dark:bg-media-black'>
-                    <div className='rounded-es-3xl sm:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 sm:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
-                        <div className='mx-auto max-w-7xl px-3 sm:px-24'>
-                            <div className="pt-12 pb-0 sm:grid sm:grid-cols-3 sm:items-center sm:pt-10">
-                                <div className='sm:col-span-2'>
-                                    <p className="opacity-0 text-media-white text-3xl font-bold pb-2 sm:text-5xl sm:pb-4 animateFadeFromDown dark:text-media-white">Artists</p>
+                    <div className='rounded-es-3xl lg:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 md:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
+                        <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
+                            <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
+                                <div className='xl:col-span-2'>
+                                    <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">Artists</p>
                                     <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>株式会社メディアアシストでは日本で活躍するマンガ家、イラストレーターの海外での活動のお手伝いをしております。お仕事の紹介や、編集者をはじめとする海外の出版社のスタッフとの連絡の通訳、翻訳や契約書の確認など、必要に応じて対応しております。<br/>現在は北米を中心に、アメリカのコミックを描くお仕事(マーベルやDC等)や北米発、日本の作家と組んだ英語圏向けのオリジナルのマンガの制作など、需要が増えてきております。海外でのお仕事にご興味のある皆様、是非、弊社へご連絡ください。<br />こちらでは、弊社がお手伝いさせていただている作家の皆さまをご紹介いたします。</p>
                                 </div>
                             </div>
-                            <div className='flex justify-center pt-5 sm:pt-14'>
+                            <div className='flex justify-center pt-5 md:pt-14'>
                                 <FilterArtistsCards
                                     categories={categories}
                                     selectedCategory={selectedCategory}
@@ -111,9 +111,9 @@ const [selectedCategory, setSelectedCategory] = useState(null);
                                 </div>
                         </div>
                     </div>
-                    <div className='mx-auto max-w-7xl px-3 sm:px-24'>
+                    <div className='mx-auto max-w-7xl px-3 lg:px-10 xl:px-24'>
                         <div className='container mx-auto pt-28'>
-                            <div className='grid grid-cols-1 gap-y-10 pb-36 justify-items-center sm:grid-cols-3 sm:gap-y-24'>
+                            <div className='grid grid-cols-1 gap-y-10 pb-36 justify-items-center md:grid-cols-2 md:gap-y-10 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-14'>
                                 {filteredCards.map(card => (
                                     <ArtistsCards
                                         key={card.id}

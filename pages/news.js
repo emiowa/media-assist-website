@@ -109,15 +109,15 @@ export default function News({allPostsData}){
       <div>
         <Layout>
           <div className='dark:bg-media-black'>
-            <div className='sm:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 sm:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
-              <div className='mx-auto max-w-7xl px-3 sm:px-24'>
-                <div className="pt-12 pb-0 sm:grid sm:grid-cols-3 sm:items-center sm:pt-10">
-                  <div className='sm:col-span-2'>
-                    <p className="opacity-0 text-media-white text-3xl font-bold pb-2 sm:text-5xl sm:pb-4 animateFadeFromDown dark:text-media-white">News</p>
+            <div className='md:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 md:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
+              <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
+                <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
+                  <div className='xl:col-span-2'>
+                    <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">News</p>
                     <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。</p>
                   </div>
                 </div>
-                <div className='flex justify-center pt-5 sm:pt-14'>
+                <div className='flex justify-center pt-5 md:pt-14'>
                   <FilterNewsPosts
                     categories={categories}
                     selectedCategory={selectedCategory}
@@ -126,10 +126,10 @@ export default function News({allPostsData}){
                 </div>
               </div>
             </div>
-            <div className='mx-auto max-w-7xl px-3'>
-              <div className='container mx-auto pt-10 sm:pt-28'>
-                <div className='grid  grid-cols-1 sm:grid-cols-3 gap-16 pb-36'>
-                  <div className='col-span-2' ref={postsRef}>
+            <div className='mx-auto max-w-7xl px-3 md:px-10'>
+              <div className='container mx-auto pt-14 md:pt-28'>
+                <div className='flex justify-center lg:mx-20 xl:mx-48 pb-36'>
+                  <div className='' ref={postsRef}>
                     {filteredPosts.map(post => (
                       <div key={post.id} className=''>
                         <NewsArticles
@@ -147,11 +147,11 @@ export default function News({allPostsData}){
                       </div>
                     ))}
                   </div>
-                  <div className={`hidden h-screen sm:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
+                  {/* <div className={`hidden h-screen md:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
                     <div className='rounded-2xl drop-shadow-lg bg-gradient-to-tr from-indigo-200 to-indigo-100 h-5/6 px-5 py-10 dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
                       <h3 className='font-semibold text-2xl text-media-black dark:text-media-white'>今後のイベント</h3>
                     </div> 
-                  </div>                
+                  </div> */}
                 </div>
               </div>
             </div>

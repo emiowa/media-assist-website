@@ -7,17 +7,17 @@ const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArt
   return (
     <div className='rounded-2xl drop-shadow-lg bg-slate-50 px-6 py-10 mb-10 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
       <div className='flex'>
-        <div className='rounded-full bg-media-red w-10 h-10'>
-          <div className='h-full flex justify-center items-center'>
-            <Image src={profilePicture} width={30} height={30} alt={`${authorName}'s profile picture`} />
-          </div>
-        </div>
-        <div className='pl-5'>
-          <p className='text-media-black font-bold'>{authorName}</p>
-          <p className='text-media-black text-sm opacity-70'>{postDate}</p>
-        </div>
+        {/* <div className='rounded-full bg-media-red w-10 h-10'> */}
+          {/* <div className='h-full flex justify-center items-center'> */}
+            {/* <Image src={profilePicture} width={30} height={30} alt={`${authorName}'s profile picture`} /> */}
+          {/* </div> */}
+        {/* </div> */}
+        {/* <div className='pl-5'> */}
+          {/* <p className='text-media-black font-bold'>{authorName}</p> */}
+          {/* <p className='text-media-black text-sm opacity-70'>{postDate}</p> */}
+        {/* </div> */}
       </div>
-        <p className='text-media-black font-bold text-lg mt-8 pb-3 sm:text-2xl'>{titleArticle}</p>
+        <p className='text-media-black font-bold text-lg mt-2 pb-3 md:text-2xl'>{titleArticle}</p>
         <p className='text-media-black leading-loose'>{summary}</p>
         {content && (
           <div className='text-media-black leading-loose'><MDXRemote {...content} /></div>
@@ -26,7 +26,7 @@ const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArt
           {Array.isArray(hashtagCategory) ? (
             <ul className='flex justify-end pt-3'>
               {hashtagCategory.map((hashtag, index) => (
-                <li key={index} className='mt-10 sm:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtag}</li>
+                <li key={index} className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtag}</li>
               ))}
             </ul>
           ) : (

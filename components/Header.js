@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 import LanguageSwitcherMobile from './LanguageSwitcherMobile';
 
+
 export default function Header(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -51,11 +52,11 @@ useEffect(() => {
     if (router.pathname === path) {
       return (
         <Image
-          src={darkMode ? "/cat-paw-3.svg" : "/cat-paw-1.svg"}
+          src={darkMode ? '/cat-paw-3.svg' : '/cat-paw-1.svg'}
           alt="Cat paw"
           width={20}
           height={20}
-          className="sm:relative right-1 h-full my-auto w-5"
+          className="lg:relative right-1 h-full my-auto w-5"
         />
       );
     }
@@ -64,7 +65,7 @@ useEffect(() => {
 
   return (
     <nav className='fixed top-0 left-0 bg-white bg-opacity-80 backdrop-blur-md z-10 w-full shadow-md dark:bg-indigo-900 dark:bg-opacity-80'>
-      <div className="mx-auto max-w-7xl px-2 sm:px-0">
+      <div className="mx-auto max-w-7xl px-2 md:px-5 lg:px-10 xl:px-0">
         <div className="relative flex h-20 items-center justify-between">
 
           {/* Logo in light mode */}
@@ -80,7 +81,7 @@ useEffect(() => {
             </Link>
           </div>
 
-          <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
             {/* Mobile menu button */}
             <button type="button" onClick={toggleMobileMenu} className="relative inline-flex items-center justify-center rounded-md p-2 text-media-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white" aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen ? 'true' : 'false'}>
               <span className="absolute -inset-0.5"></span>
@@ -95,8 +96,8 @@ useEffect(() => {
               </svg>
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
-            <div className="hidden sm:block">
+          <div className="flex flex-1 items-center justify-center lg:items-stretch lg:justify-end">
+            <div className="hidden lg:block">
               <div className="flex space-x-16">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                 <div className='flex relative'>
@@ -141,7 +142,7 @@ useEffect(() => {
       </div>
 
       {/* Mobile menu, show/hide based on menu state */}
-      <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+      <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
         <div className="z-10 pt-2 origin-top-right rounded-md bg-white bg-opacity-10 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none space-y-1 dark:bg-indigo-900 dark:bg-opacity-10">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             <div className='flex justify-center'>

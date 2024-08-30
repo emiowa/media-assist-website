@@ -7,9 +7,9 @@ const ArtistsCards = ({ illustration, pawCategories, artistName, pdfUrl }) => {
   };
 
   return (
-    <div className='rounded-2xl w-80 h-auto drop-shadow-lg bg-slate-50 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
-        <div className='relative w-full h-96 overflow-hidden rounded-t-2xl'>
-            <Image className='absolute inset-0 w-full h-full object-cover' src={illustration} alt={artistName} width={320} height={384} />
+    <div className='rounded-xl w-80 drop-shadow-lg bg-slate-50 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
+        <div className='relative w-full h-96 overflow-hidden rounded-t-xl'>
+            <Image className='absolute inset-0 object-cover' src={illustration} alt={artistName} width={320} height={384} />
         </div>
         <div className='flex justify-between py-4 px-6'>
             <div className='text-media-black'>
