@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import Link from 'next/link';
 
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       <>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <Link rel="icon" href="/web-logo-4.svg" type="image/svg+xml" />
+          <link rel="icon" href="/web-logo-4.svg" type="image/svg+xml" />
           <title>Media Assist</title>
         </Head>
           <Component {...pageProps} />
