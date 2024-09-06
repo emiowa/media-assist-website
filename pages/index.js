@@ -205,11 +205,12 @@ export default function Home({allPostsData, featuredArtists}){
                                 </h2>
                             </div>
                             <div className='grid grid-cols-1 gap-y-10 pb-20 justify-items-center md:grid-cols-2 md:gap-y-10 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-14'>
-                                {featuredArtists.map(({id, artistName, illustration, portfolioPdf, category}) => (
+                                {featuredArtists.map(({id, artistName, illustration, portfolioPdf, category, artistPresentation}) => (
                                     <div key={id}>
                                         <ArtistsCards
                                             artistName={artistName}
                                             illustration={illustration}
+                                            artistPresentation={artistPresentation}
                                             showButton={false}
                                         />
                                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, showButton = true }) => {
+const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, artistPresentation, showButton = true }) => {
   const handleButtonClick = () => {
     if (portfolioPdf){
         window.open(portfolioPdf, '_blank');
@@ -9,11 +9,16 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, sh
   };
 
   return (
-    <div className='rounded-xl w-80 drop-shadow-lg bg-slate-50 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
+    <div className='rounded-xl w-80 drop-shadow-lg shadow-lg bg-slate-50 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
         <div className='relative w-full h-96 overflow-hidden rounded-t-xl'>
-            <Image className='absolute inset-0 object-cover' src={illustration} alt={`${artistName}'s illustration`} width={320} height={384} />
+            <div className='relative w-full h-full'>
+                <Image className='absolute inset-0 object-cover' src={illustration} alt={`${artistName}'s illustration`} width={320} height={384} />
+                <div className='absolute inset-0 flex items-center justify-center text-media-black opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 bg-media-white bg-opacity-85'>
+                    <p className='px-5'>{artistPresentation}</p>
+                </div>
+            </div>
         </div>
-        <div className='flex justify-between py-4 px-6'>
+        <div className='flex justify-between pt-2 pb-4 px-6'>
             <div className='text-media-black'>
                 <h3 className='font-bold text-lg'>{artistName}</h3>
                 <div>
@@ -42,6 +47,7 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, sh
                 </div>
             )}
         </div>
+        <p className='text-media-black text-xs pb-2 text-center'>All copyrights belong to their respective owners</p>
     </div>
   );
 };

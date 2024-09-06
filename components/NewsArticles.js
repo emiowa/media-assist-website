@@ -11,7 +11,7 @@ const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArt
 
   return (
     <div ref={articleRef} className='news-article animateNotActive'>
-      <div className='rounded-2xl drop-shadow-lg bg-slate-50 px-6 py-10 mb-10 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
+      <div className='rounded-2xl drop-shadow-lg shadow-lg bg-slate-50 px-6 py-10 mb-10 dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100'>
         <div className='flex'>
           {/* <div className='rounded-full bg-media-red w-10 h-10'> */}
             {/* <div className='h-full flex justify-center items-center'> */}

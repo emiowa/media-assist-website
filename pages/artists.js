@@ -21,7 +21,7 @@ export default function Artists({allArtistsData}){
   const categories = [
     { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
     { id: '2', label: 'マンガ家', icon: '/cat-paw-category-2.svg' },
-    { id: '3', label: '2Dアニメーター', icon: '/cat-paw-category-3.svg' },
+    { id: '3', label: 'デザイン', icon: '/cat-paw-category-3.svg' },
     { id: '4', label: '3Dアニメーター', icon: '/cat-paw-category-4.svg' },
   ];
 
@@ -79,6 +79,7 @@ const [selectedCategory, setSelectedCategory] = useState(null);
                                       illustration={artist.illustration}
                                       portfolioPdf={artist.portfolioPdf}
                                       category={artist.category}
+                                      artistPresentation={artist.artistPresentation}
                                     />
                                   </div>
                                 ))}
