@@ -39,7 +39,7 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, ar
             </div>
             {showButton && (
                 <div className='flex flex-col items-end justify-center'>
-                    <button onClick={handleButtonClick} className='rounded-full border text p-1 bg-white drop-shadow-md dark:bg-transparent dark:border-media-black'>
+                    <button onClick={handleButtonClick} className='rounded-full border text p-1 bg-white drop-shadow-md dark:bg-transparent dark:border-media-black dark:bg-indigo-50'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 text-media-black">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
