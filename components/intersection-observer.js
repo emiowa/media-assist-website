@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 const useIntersectionObserver = (elements, animationClass) => {
   useEffect(() => {
+    if (!elements.length) return;
+    
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {

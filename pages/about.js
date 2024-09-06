@@ -64,10 +64,10 @@ export default function AboutUs(){
             <Layout>
                 <div className='dark:bg-media-black'>
                     <div className='mx-auto max-w-7xl px-3 md:px-10 lg:px-24'>
-                        <div className="pt-32 lg:h-screen lg:grid lg:grid-cols-2 lg:items-center lg:pt-10">
+                        <div className="pt-32 lg:h-screen lg:grid lg:grid-cols-2 lg:items-center lg:pt-10 flex-1">
                             <div>
                                 <p className="opacity-0 text-media-black text-3xl font-bold pb-2 md:text-5xl md:pb-4 animateFadeFromDown dark:text-media-white">Media Assist</p>
-                                <p className='opacity-0 text-media-black font-medium text-xl pb-6 md:text-4xl animateFadeFromDown dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                                <p className='opacity-0 text-media-black font-medium text-xl pb-6 md:text-3xl animateFadeFromDown dark:text-media-white'>みんなの「メディア」を作る会社</p>
                                 <p className='opacity-0 text-media-black text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。
                                 映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。<br />殊に、教育/研修向けコンテンツについては、丁寧・正確かつ効果のある内容が求められます。そのため、どの映像制作業者さんにお話をするか迷いがあったり、撮影費用の妥当性や依頼の仕方など、ご不明な点も多いとご相談をいただきます。弊社では、そのような事業者の皆さまのご相談に応じ、多数の関係先を通じ企画を実現するようにバックアップを行って参ります。</p>
                             </div>

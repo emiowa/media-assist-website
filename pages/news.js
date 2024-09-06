@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout"
 import Image from "next/image"
-import { createRef, useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {useRouter} from 'next/router';
 import useIntersectionObserver from '../components/intersection-observer';
 import { getAllPostsData } from '../lib/posts';
@@ -81,30 +81,6 @@ export default function News({allPostsData}){
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-    // useEffect(() => {
-    //     if (typeof window !== 'undefined'){
-    //         const handleResize = () => {
-    //             setIsLargeScreen(window.innerWidth >= 768);
-    //         };
-    //         window.addEventListener('resize', handleResize);
-    //         handleResize();
-    //         return () => {
-    //             window.removeEventListener('resize', handleResize);
-    //         };
-    //     }
-    // }, []);
-
-    // const slideInLeftRef1 = useRef(null);
-    // const slideInRightRef2 = useRef(null);
-    // const fadeInUpRef4 = useRef(null);
-
-    // const animationClassForSlideRight = isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown';
-    // const animationClassForSlideLeft = isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown';
-
-    // useIntersectionObserver([slideInLeftRef1], isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown');
-    // useIntersectionObserver([slideInRightRef2], isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown');
-    // useIntersectionObserver([fadeInUpRef4], 'animateFadeFromDown');
-
     return(
       <div>
         <Layout>
@@ -114,7 +90,7 @@ export default function News({allPostsData}){
                 <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
                   <div className='xl:col-span-2'>
                     <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">News</p>
-                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>私たちメディアアシストは、教育/研修向けの映像制作やその配信のご相談を通じて皆さまの事業の支援を行う会社として誕生しました。映像のニーズが高まる中、「どうしていいのかわからない」という事業者さまも多いのではないでしょうか。</p>
+                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>事業活動の近況をこちらでご確認いただけます。</p>
                   </div>
                 </div>
                 <div className='flex justify-center pt-5 md:pt-14'>

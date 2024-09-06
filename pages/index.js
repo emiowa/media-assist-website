@@ -5,11 +5,12 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import { createRef, useEffect, useState, useRef } from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
-import ArtistsCardsSmall from '../components/ArtistsCardsSmall';
 import { getAllPostsData } from '../lib/posts';
+import { getAllArtistsData } from '../lib/artists';
 import NewsArticles from '../components/NewsArticles';
 import { serialize } from 'next-mdx-remote/serialize';
 import lottie from 'lottie-web';
+import ArtistsCards from '@/components/ArtistsCards';
 
 // import jp from '../public/locales/jp/translation.json';
 // import en from '../public/locales/en/translation.json';
@@ -19,7 +20,6 @@ import lottie from 'lottie-web';
 
 export async function getStaticProps() {
   const allPostsData = getAllPostsData();
-
   const posts = await Promise.all(allPostsData.map(async post => {
     const mdxSource = await serialize(post.content);
     return {
@@ -30,14 +30,20 @@ export async function getStaticProps() {
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   const lastThreePosts = posts.slice(0, 3);
 
+  const allArtistsData = getAllArtistsData();
+  const featuredArtists = allArtistsData.filter(artist => 
+      [1, 2, 3].includes(Number(artist.id)) // Specify which artist IDs to display
+  ).slice(0, 6); // Limit the number of artists
+
   return {
     props: {
       allPostsData: lastThreePosts,
+      featuredArtists,
     },
   };
 }
 
-export default function Home({allPostsData}){
+export default function Home({allPostsData, featuredArtists}){
     const router = useRouter();
 
     let animation3ContainerLight = useRef(null);
@@ -136,9 +142,6 @@ export default function Home({allPostsData}){
     const fadeInUpRef2 = useRef(null);
     const fadeInUpRef3 = useRef(null);
 
-    // const animationClassForSlideRight = isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown';
-    // const animationClassForSlideLeft = isLargeScreen ? 'animateSlideFromLeft' : 'animateFadeFromDown';
-
     useIntersectionObserver([slideInRightRef1], isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown');
     useIntersectionObserver([fadeInUpRef1, fadeInUpRef2, fadeInUpRef3], 'animateFadeFromDown');
 
@@ -148,15 +151,15 @@ export default function Home({allPostsData}){
                 <div className='dark:bg-media-black'>
                     <div className='h-screen flex flex-col justify-center items-center md:pt-36'>
                         <div className='flex flex-col items-center justify-center'>
-                            <p className='opacity-0 text-media-black font-bold text-4xl pb-2 animateFadeFromDown md:text-6xl dark:text-media-white'>Media Assist</p>
+                            <p className='text-media-black font-bold text-4xl pb-2 md:text-6xl dark:text-media-white'>Media Assist</p>
                             {/* <p className='opacity-0 text-media-black font-medium text-xl md:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
-                            <p className='opacity-0 text-media-black font-medium text-xl md:text-3xl animateFadeFromDownDelay dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>みんなの「メディア」を作る会社</p>
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
-                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-9/12 dark:hidden" />
+                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden" />
                             {/* Animation for dark mode */}
-                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-9/12 dark:md:block" />
+                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block" />
                         </div>
                     </div>
                     
@@ -187,8 +190,8 @@ export default function Home({allPostsData}){
                             </div>
                         </div>
                     </div>
-                    <div className='mx-auto max-w-7xl px-3 pt-10 pb-24 md:pt-20 lg:pt-36 lg:pb-36 md:px-10 lg:px-24'>
-                        <div className='pb-20 animateNotActive' ref={fadeInUpRef1}>
+                    <div className='mx-auto max-w-7xl px-3 lg:px-10 xl:px-24'>
+                        <div className='container mx-auto pt-28 animateNotActive' ref={fadeInUpRef1}>
                             <div>
                                 <h2 className='text-media-black text-2xl font-medium pb-6 md:text-3xl dark:text-media-white'>
                                     <button onClick={artistsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
@@ -201,24 +204,19 @@ export default function Home({allPostsData}){
                                     </button>
                                 </h2>
                             </div>
-                            <div className='flex flex-col items-center md:flex-row'>
-                                <ArtistsCardsSmall
-                                    illustration="/sample1.jpg"
-                                    artistName="Artist1"
-                                />
-
-                                <ArtistsCardsSmall
-                                    illustration="/sample2.jpg"
-                                    artistName="Artist2"
-                                />
-
-                                <ArtistsCardsSmall
-                                    illustration="/sample1.jpg"
-                                    artistName="Artist3"
-                                />
+                            <div className='grid grid-cols-1 gap-y-10 pb-20 justify-items-center md:grid-cols-2 md:gap-y-10 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-14'>
+                                {featuredArtists.map(({id, artistName, illustration, portfolioPdf, category}) => (
+                                    <div key={id}>
+                                        <ArtistsCards
+                                            artistName={artistName}
+                                            illustration={illustration}
+                                            showButton={false}
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                        <div className='animateNotActive' ref={fadeInUpRef2}>
+                        <div className='container mx-auto animateNotActive' ref={fadeInUpRef2}>
                             <div>
                                 <h2 className='text-media-black text-2xl font-medium pb-6 md:text-3xl dark:text-media-white'>
                                     <button onClick={newsPageButton} className='flex items-center text-media-black hover:text-indigo-700 focus:outline-none dark:text-media-white dark:hover:text-indigo-500'>
@@ -232,7 +230,7 @@ export default function Home({allPostsData}){
                                 </h2>
                             </div>
                             <div className='container mx-auto'>
-                                <div className='flex flex-col'>
+                                <div className='flex flex-col pb-32'>
                                     <div className='' ref={postsRef}>
                                         {allPostsData.map(({ id, profilePicture, authorName, postDate, titleArticle, content, summary, hashtagCategory, linkHref }) => (
                                             <div key={id}>
