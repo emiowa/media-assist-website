@@ -9,17 +9,6 @@ const LanguageSwitcherDropdownIcon = () => (
 );
 
 const LanguageSwitcherDropdown = () => {
-  const router = useRouter();
-  const { locale } = router;
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => setIsOpen(prev => !prev);
-  const closeDropdown = () => setIsOpen(false);
-
-  const handleLanguageChange = (lang) => {
-    router.push(router.asPath, router.asPath, {locale: lang});
-    closeDropdown();
-  };
 
   return (
     <div className="relative inline-block text-left">
