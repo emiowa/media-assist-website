@@ -1,7 +1,8 @@
 import React from 'react';
 
-const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory }) => {
+const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory, noNewsMessage }) => {
   return (
+    <div>
     <div className='grid grid-cols-2 md:grid-cols-3 gap-3 text-sm lg:flex md:text-base justify-center mt-8'>
       {categories.map(category => (
         <button
@@ -26,6 +27,10 @@ const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory }) => 
       >
         <p className=''>すべて</p>
       </button>
+    </div>
+    {noNewsMessage && (
+      <div>{noNewsMessage}</div>
+    )}
     </div>
   );
 };

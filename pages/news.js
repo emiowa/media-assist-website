@@ -47,6 +47,10 @@ export default function News({allPostsData}){
     '#コラボレーション',
   ];
 
+  const noNewsMessage = selectedCategory && filteredPosts.length === 0
+    ? 'このカテゴリのニュースはまだありません。'
+    : '';
+
   const router = useRouter();
   const {id} = router.query;
   useEffect (() => {
@@ -106,22 +110,26 @@ export default function News({allPostsData}){
               <div className='container mx-auto pt-14 md:pt-28'>
                 <div className='flex justify-center lg:mx-20 xl:mx-48 pb-36'>
                   <div className='' ref={postsRef}>
-                    {filteredPosts.map(post => (
-                      <div key={post.id} className=''>
-                        <NewsArticles
-                          id={post.id}
-                          date={post.date}
-                          profilePicture={post.profilePicture}
-                          authorName={post.authorName}
-                          postDate={post.postDate}
-                          titleArticle={post.titleArticle}
-                          summary={post.summary}
-                          content={post.content}
-                          hashtagCategory={post.hashtagCategory}
-                          linkHref={post.linkHref}
-                        />
-                      </div>
-                    ))}
+                    {filteredPosts.length > 0 ? (
+                      filteredPosts.map(post => (
+                        <div key={post.id} className=''>
+                          <NewsArticles
+                            id={post.id}
+                            date={post.date}
+                            profilePicture={post.profilePicture}
+                            authorName={post.authorName}
+                            postDate={post.postDate}
+                            titleArticle={post.titleArticle}
+                            summary={post.summary}
+                            content={post.content}
+                            hashtagCategory={post.hashtagCategory}
+                            linkHref={post.linkHref}
+                          />
+                        </div>
+                      ))
+                    ) : (
+                      <p className='text-center mt-4 text-media-black'>{noNewsMessage}</p>
+                    )}
                   </div>
                   {/* <div className={`hidden h-screen md:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>
                     <div className='rounded-2xl drop-shadow-lg bg-gradient-to-tr from-indigo-200 to-indigo-100 h-5/6 px-5 py-10 dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>

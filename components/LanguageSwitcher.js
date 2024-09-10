@@ -10,28 +10,14 @@ const LanguageSwitcherDropdownIcon = () => (
 
 const LanguageSwitcherDropdown = () => {
   const router = useRouter();
-  const { locale } = router.locale || 'jp';
+  const { locale } = router;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
-
   const closeDropdown = () => setIsOpen(false);
 
-  // const handleLanguageChange = (lang) => {
-  //   router.push(router.pathname, router.asPath, { locale: lang });
-  //   closeDropdown();
-  // };
-
   const handleLanguageChange = (lang) => {
-    if (lang === 'jp') {
-      // Change locale for Japanese
-      router.push('/');
-    } else if (lang === 'en') {
-      // Redirect to the under construction page
-      router.push('/under-construction');
-    } else if (lang === 'sp') {
-      router.push('/en-construccion');
-    }
+    router.push(router.asPath, router.asPath, {locale: lang});
     closeDropdown();
   };
 

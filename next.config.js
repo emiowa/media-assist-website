@@ -4,8 +4,8 @@ const withMDX = require('@next/mdx')({
 
 const nextConfig = {
   i18n: {
+    locales: ['jp', 'en', 'es'],
     defaultLocale: 'jp',
-    locales: ['jp'],
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };

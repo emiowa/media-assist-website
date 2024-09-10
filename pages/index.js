@@ -11,10 +11,11 @@ import NewsArticles from '../components/NewsArticles';
 import { serialize } from 'next-mdx-remote/serialize';
 import lottie from 'lottie-web';
 import ArtistsCards from '@/components/ArtistsCards';
+import Modal from '../components/Modal';
 
-// import jp from '../public/locales/jp/translation.json';
-// import en from '../public/locales/en/translation.json';
-// import sp from '../public/locales/sp/translation.json';
+import jp from './locales/jp';
+import en from './locales/en';
+import es from './locales/es';
 
 
 
@@ -72,24 +73,10 @@ export default function Home({allPostsData, featuredArtists}){
 
         return () => animDark.destroy();
     }, [])
-    // const {locale} = router;
-    // const [translations, setTranslations] = useState({});
 
-    // useEffect(() => {
-    //     const getTranslations = () => {
-    //         switch (locale){
-    //             case 'jp':
-    //                 return jp;
-    //             case 'en':
-    //                 return en;
-    //             case 'sp':
-    //                 default:
-    //                     return sp;
-    //         }
-    //     };
+    const {locale} = router;
+    const t = locale === 'jp' ? jp : en;
 
-    //     setTranslations(getTranslations());
-    // }, [locale]);
 
     const recentEventsRef = useRef(null);
     const postsRef = useRef(null);
@@ -145,6 +132,19 @@ export default function Home({allPostsData, featuredArtists}){
     useIntersectionObserver([slideInRightRef1], isLargeScreen ? 'animateSlideFromRight' : 'animateFadeFromDown');
     useIntersectionObserver([fadeInUpRef1, fadeInUpRef2, fadeInUpRef3], 'animateFadeFromDown');
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedArtist, setSelectedArtist] = useState(null);
+  
+    const openModal = (artist) => {
+      setSelectedArtist(artist);
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+      setSelectedArtist(null);
+    };
+
     return(
         <div>
             <Layout>
@@ -153,6 +153,7 @@ export default function Home({allPostsData, featuredArtists}){
                         <div className='flex flex-col items-center justify-center'>
                             <p className='text-media-black font-bold text-4xl pb-2 md:text-6xl dark:text-media-white'>Media Assist</p>
                             {/* <p className='opacity-0 text-media-black font-medium text-xl md:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
+                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>{t.slogan}</p>
                             <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>みんなの「メディア」を作る会社</p>
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
@@ -205,13 +206,12 @@ export default function Home({allPostsData, featuredArtists}){
                                 </h2>
                             </div>
                             <div className='grid grid-cols-1 gap-y-10 pb-20 justify-items-center md:grid-cols-2 md:gap-y-10 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-14'>
-                                {featuredArtists.map(({id, artistName, illustration, portfolioPdf, category, artistPresentation}) => (
-                                    <div key={id}>
+                                {featuredArtists.map(artist => (
+                                    <div key={artist.id}>
                                         <ArtistsCards
-                                            artistName={artistName}
-                                            illustration={illustration}
-                                            artistPresentation={artistPresentation}
-                                            showButton={false}
+                                            artistName={artist.artistName}
+                                            illustration={artist.illustration}
+                                            onClick={() => openModal(artist)}
                                         />
                                     </div>
                                 ))}
@@ -254,6 +254,7 @@ export default function Home({allPostsData, featuredArtists}){
                                 </div>
                             </div>
                         </div>
+                        <Modal isOpen={isModalOpen} onClose={closeModal} artist={selectedArtist} />
                     </div>
                 </div>
             </Layout>

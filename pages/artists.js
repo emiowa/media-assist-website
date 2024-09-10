@@ -5,6 +5,7 @@ import { createRef, useEffect, useState, useRef } from 'react';
 import ArtistsCards from '../components/ArtistsCards';
 import FilterArtistsCards from '../components/FilterArtistsCards';
 import {getAllArtistsData} from '../lib/artists';
+import Modal from '../components/Modal';
 
 
 export async function getStaticProps() {
@@ -15,17 +16,17 @@ export async function getStaticProps() {
       },
     };
   }
-  
+
 
 export default function Artists({allArtistsData}){
   const categories = [
     { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
     { id: '2', label: 'マンガ家', icon: '/cat-paw-category-2.svg' },
-    { id: '3', label: 'デザイン', icon: '/cat-paw-category-3.svg' },
-    { id: '4', label: '3Dアニメーター', icon: '/cat-paw-category-4.svg' },
+    { id: '3', label: 'デザイナー', icon: '/cat-paw-category-3.svg' },
+    { id: '4', label: 'アニメーター', icon: '/cat-paw-category-4.svg' },
   ];
 
-const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   // Handle category click
   const handleCategoryClick = (id) => {
@@ -45,6 +46,19 @@ const [selectedCategory, setSelectedCategory] = useState(null);
         )
       )
     : allArtistsData;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedArtist, setSelectedArtist] = useState(null);
+
+  const openModal = (artist) => {
+    setSelectedArtist(artist);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedArtist(null);
+  };
 
     return(
         <div>
@@ -77,14 +91,14 @@ const [selectedCategory, setSelectedCategory] = useState(null);
                                       id={artist.id}
                                       artistName={artist.artistName}
                                       illustration={artist.illustration}
-                                      portfolioPdf={artist.portfolioPdf}
                                       category={artist.category}
-                                      artistPresentation={artist.artistPresentation}
+                                      onClick={() => openModal(artist)}
                                     />
                                   </div>
                                 ))}
                             </div>
                         </div>
+                        <Modal isOpen={isModalOpen} onClose={closeModal} artist={selectedArtist} />
                     </div>
                 </div>
             </Layout>

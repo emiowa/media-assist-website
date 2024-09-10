@@ -18,6 +18,7 @@ module.exports = {
     './components/FilterNewsPosts.js',
     './components/LanguageSwitcher',
     './components/LanguageSwitcherMobile',
+    './components/Modal'
   ],
   darkMode: 'class',
   theme: {
