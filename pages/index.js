@@ -12,6 +12,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import lottie from 'lottie-web';
 import ArtistsCards from '@/components/ArtistsCards';
 import Modal from '../components/Modal';
+import useTranslation from '../hooks/useTranslation';
 
 
 
@@ -42,6 +43,7 @@ export async function getStaticProps() {
 
 export default function Home({allPostsData, featuredArtists}){
     const router = useRouter();
+    const t = useTranslation();
 
     let animation3ContainerLight = useRef(null);
     let animation3ContainerDark = useRef(null);
@@ -144,8 +146,7 @@ export default function Home({allPostsData, featuredArtists}){
                     <div className='h-screen flex flex-col justify-center items-center md:pt-36'>
                         <div className='flex flex-col items-center justify-center'>
                             <p className='text-media-black font-bold text-4xl pb-2 md:text-6xl dark:text-media-white'>Media Assist</p>
-                            {/* <p className='opacity-0 text-media-black font-medium text-xl md:text-5xl animateFadeFromDownDelay dark:text-media-white'>{translations.slogan}</p> */}
-                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>みんなの「メディア」を作る会社</p>
+                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>{t.indexSlogan}</p>
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}

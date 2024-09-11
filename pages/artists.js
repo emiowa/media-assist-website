@@ -6,6 +6,7 @@ import ArtistsCards from '../components/ArtistsCards';
 import FilterArtistsCards from '../components/FilterArtistsCards';
 import {getAllArtistsData} from '../lib/artists';
 import Modal from '../components/Modal';
+import useTranslation from '../hooks/useTranslation';
 
 
 export async function getStaticProps() {
@@ -19,6 +20,8 @@ export async function getStaticProps() {
 
 
 export default function Artists({allArtistsData}){
+  const t = useTranslation();
+
   const categories = [
     { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
     { id: '2', label: 'マンガ家', icon: '/cat-paw-category-2.svg' },
@@ -66,10 +69,10 @@ export default function Artists({allArtistsData}){
                 <div className='dark:bg-media-black'>
                     <div className='rounded-es-3xl lg:rounded-es-bglg bg-gradient-to-tr from-indigo-900 to-indigo-600 mt-20 pt-0 md:pt-10 pb-10 animateFadeFromDown dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
                         <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
-                            <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
-                                <div className='xl:col-span-2'>
+                            <div className="pt-12 pb-0 xl:grid xl:grid-cols-5 xl:items-center md:pt-10">
+                                <div className='xl:col-span-4'>
                                     <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">Artists</p>
-                                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>株式会社メディアアシストでは日本で活躍するマンガ家、イラストレーターの海外での活動のお手伝いをしております。お仕事の紹介や、編集者をはじめとする海外の出版社のスタッフとの連絡の通訳、翻訳や契約書の確認など、必要に応じて対応しております。<br/>現在は北米を中心に、アメリカのコミックを描くお仕事(マーベルやDC等)や北米発、日本の作家と組んだ英語圏向けのオリジナルのマンガの制作など、需要が増えてきております。海外でのお仕事にご興味のある皆様、是非、弊社へご連絡ください。<br />こちらでは、弊社がお手伝いさせていただている作家の皆さまをご紹介いたします。</p>
+                                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white' dangerouslySetInnerHTML={{__html: t.artistsIntro}}/>
                                 </div>
                             </div>
                             <div className='flex justify-center pt-5 md:pt-14'>
