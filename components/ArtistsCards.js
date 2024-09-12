@@ -1,7 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import useTranslation from '../hooks/useTranslation';
+import { useRouter } from 'next/router';
 
 const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, artistPresentation, onClick, showButton = true }) => {
+    const { t } = useTranslation();
+    const { locale } = useRouter();
+
   const handleButtonClick = () => {
     if (portfolioPdf){
         window.open(portfolioPdf, '_blank');
@@ -17,7 +22,7 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, ar
         </div>
         <div className='flex justify-center pt-4 pb-5 px-6'>
             <div className='text-media-black'>
-                <h3 className='font-bold text-lg'>{artistName}</h3>
+                <h3 className='font-bold text-lg'>{artistName[locale]}</h3>
                 <div>
                     {Array.isArray(category) ? (
                         <div className='w-full flex items-center justify-center gap-2'>

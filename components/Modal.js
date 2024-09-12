@@ -25,12 +25,12 @@ const Modal = ({ isOpen, onClose, artist }) => {
         </button>
         {artist && (
           <>
-            <h2 className='text-lg font-bold text-center text-media-black pb-5'>{artist.artistName}</h2>
+            <h2 className='text-2xl font-bold text-center text-media-black pb-5'>{artist.artistName[locale]}</h2>
             <div className='flex flex-col gap-2 pb-8'>
                 {artist.category.map((cat, index) => (
                     <div key={index} className='flex items-center gap-2 pb-2'>
                         <Image key={index} src={cat} alt={`paw-category-${index}.svg`} width={20} height={20} />
-                        <span className='pl-3 text-media-black'>{artist.categoryName[index]}</span>
+                        <span className='pl-3 text-media-black'>{artist.categoryName[locale][index]}</span>
                     </div>
                 ))}
             </div>
