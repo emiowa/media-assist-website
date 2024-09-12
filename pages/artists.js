@@ -20,7 +20,10 @@ export async function getStaticProps() {
 
 
 export default function Artists({allArtistsData}){
-  const t = useTranslation();
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedArtist, setSelectedArtist] = useState(null);
 
   const categories = [
     { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
@@ -28,8 +31,6 @@ export default function Artists({allArtistsData}){
     { id: '3', label: 'デザイナー', icon: '/cat-paw-category-3.svg' },
     { id: '4', label: 'アニメーター', icon: '/cat-paw-category-4.svg' },
   ];
-
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
   // Handle category click
   const handleCategoryClick = (id) => {
@@ -50,9 +51,6 @@ export default function Artists({allArtistsData}){
       )
     : allArtistsData;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedArtist, setSelectedArtist] = useState(null);
-
   const openModal = (artist) => {
     setSelectedArtist(artist);
     setIsModalOpen(true);
@@ -72,7 +70,7 @@ export default function Artists({allArtistsData}){
                             <div className="pt-12 pb-0 xl:grid xl:grid-cols-5 xl:items-center md:pt-10">
                                 <div className='xl:col-span-4'>
                                     <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">Artists</p>
-                                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white' dangerouslySetInnerHTML={{__html: t.artistsIntro}}/>
+                                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white' dangerouslySetInnerHTML={{__html: t('artistsIntro')}}/>
                                 </div>
                             </div>
                             <div className='flex justify-center pt-5 md:pt-14'>

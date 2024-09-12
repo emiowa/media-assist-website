@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Modal.module.css';
+import useTranslation from '../hooks/useTranslation';
+import { useRouter } from 'next/router';
 
 const Modal = ({ isOpen, onClose, artist }) => {
+  const { t } = useTranslation();
+  const { locale } = useRouter();
+
   if (!isOpen) return null;
 
   const handleButtonClick = () => {
@@ -13,6 +18,7 @@ const Modal = ({ isOpen, onClose, artist }) => {
 
   return (
     <div className={styles.overlay}>
+      <div className='pt-12 flex justify-center items-center'>
       <div className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;
@@ -29,21 +35,20 @@ const Modal = ({ isOpen, onClose, artist }) => {
                 ))}
             </div>
             
-            <p className='leading-loose text-media-black font-medium'>アーティストについて：</p>
-            <p className='leading-loose text-media-black'>{artist.artistPresentation}</p>
+            <p className='leading-loose text-media-black font-medium'>{t('modalAboutArtist')}</p>
+            <p className='leading-loose text-media-black'>{artist.artistPresentation[locale]}</p>
             <div className='flex justify-center pt-8 pb-2'>
                 <button onClick={handleButtonClick} className='text-media-black flex border border-media-black bg-transparent rounded-full py-2 px-4 hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
-                    <span className=''>ポートフォリオを見る</span>
+                    <span className=''>{t('modalPortfolioButton')}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </button>
             </div>
-            <p className='text-xs text-media-black pt-8'>*All copyrights belong to their respective owners</p>
-            
-
+            <p className='text-xs text-media-black pt-8'>{t('modalCopyrightWarning')}</p>
           </>
         )}
+      </div>
       </div>
     </div>
   );

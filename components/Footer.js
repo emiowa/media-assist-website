@@ -4,18 +4,18 @@ import Image from 'next/image';
 import useTranslation from '../hooks/useTranslation';
 
 export default function Footer(){
-    const t = useTranslation();
+    const { t } = useTranslation();
 	return (
 			<div className="bg-media-black rounded-se-3xl md:rounded-se-bglg dark:bg-indigo-900 dark:rounded-none">
                 <div className='mx-auto flex max-w-7xl px-4 py-14 md:px-10 xl:px-24 md:py-24'>
                     <div className='w-full'>
                         <div className='pb-20 md:pb-16'>
                             <p className='text-media-white font-bold text-3xl pb-1 md:text-4xl md:pb-2'>Media Assist</p>
-                            <p className='text-media-white text-base font-normal md:text-xl lg:text-2xl md:font-medium'>{t.indexSlogan}</p>
+                            <p className='text-media-white text-base font-normal md:text-xl lg:text-2xl md:font-medium'>{t('indexSlogan')}</p>
                         </div>
                         <div>
-                            <p className='hidden text-media-white text-base md:pb-2 lg:flex'>{t.footerAddress}</p>
-                            <p className='text-media-white text-sm md:text-base md:pb-2 lg:hidden' dangerouslySetInnerHTML={{__html: t.footerAddressSmscreen}} />
+                            <p className='hidden text-media-white text-base md:pb-2 lg:flex'>{t('footerAddress')}</p>
+                            <p className='text-media-white text-sm md:text-base md:pb-2 lg:hidden' dangerouslySetInnerHTML={{__html: t('footerAddressSmscreen')}} />
                             <p className='text-media-white text-sm md:text-base'>Tel: (03)5957-7244</p>
                         </div>
                     </div>

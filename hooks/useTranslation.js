@@ -6,9 +6,15 @@ import es from '../public/locales/es';
 
 const useTranslation = () => {
   const { locale } = useRouter();
-  const t = locale === 'jp' ? jp : (locale === 'es' ? es : en);
-  
-  return t;
+  const translations = {
+    jp,
+    en,
+    es
+  }[locale] || jp;
+
+  const t = (key) => translations[key] || key;
+
+  return { t };
 };
 
 export default useTranslation;
