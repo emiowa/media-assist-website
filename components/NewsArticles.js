@@ -4,8 +4,10 @@ import { MDXRemote } from 'next-mdx-remote';
 import Link from 'next/link';
 import {useRef} from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
+import useTranslation from '../hooks/useTranslation';
 
 const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArticle, summary, content, hashtagCategory, linkHref }) => {
+  const { t } = useTranslation();
   const articleRef = useRef(null);
   useIntersectionObserver([articleRef], 'animateFadeFromDown');
 
@@ -42,7 +44,7 @@ const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArt
           {linkHref && (
             <div className='mt-12'>
               <Link href={linkHref} className='border border-media-black bg-transparent rounded-full py-2 px-4 text-media-black hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
-                もっと見る
+                {t('indexNewsReadMoreButton')}
               </Link>
             </div>
           )}

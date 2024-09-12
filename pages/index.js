@@ -158,27 +158,27 @@ export default function Home({allPostsData, featuredArtists}){
                     
                     <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl lg:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
                         <div className='text-center pb-10 pt-14 md:pb-10 md:pt-20'>
-                            <p className='text-media-white font-bold text-2xl pb-1 md:text-4xl lg:text-5xl md:pb-2 lg:pb-4'>私たちがお手伝いします</p>
-                            <p className='text-media-white font-medium text-2xl md:text-4xl lg:text-5xl md:font-medium'>サービスについて</p>
+                            <p className='text-media-white font-bold text-2xl pb-1 md:text-4xl lg:text-5xl md:pb-2 lg:pb-4'>{t('indexServiceTitle')}</p>
+                            <p className='text-media-white font-medium text-2xl md:text-4xl lg:text-5xl md:font-medium'>{t('indexServiceSubtitle')}</p>
                         </div>
                         <div className='mx-auto max-w-7xl px-3 pb-10 md:px-10 lg:px-24 lg:pb-20'>
                             <div className='lg:flex justify-center'>
                                 <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作・配信に掛かる企画、<br />立案、実施、運営及びそれらに<br />関するコンサルティング業務</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList1')}} />
                                 </div>
                                 <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>情報/電子機器関連システム<br />(ハードウェア、ソフトウェア)<br />事務用機器の導入支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList2')}} />
                                 </div>
                             </div>
                             <div className='lg:flex justify-center items-center'>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>Webサイト運営支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('indexServiceList3')}</p>
                                 </div>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>映像制作会社のお見積り相談、<br />ご紹介 等</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList4')}} />
                                 </div>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>ITヘルプデスク支援</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('indexServiceList5')}</p>
                                 </div>
                             </div>
                         </div>

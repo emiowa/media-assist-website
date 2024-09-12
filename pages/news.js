@@ -8,6 +8,7 @@ import { getAllPostsData } from '../lib/posts';
 import NewsArticles from '../components/NewsArticles';
 import FilterNewsPosts from '../components/FilterNewsPosts';
 import { serialize } from 'next-mdx-remote/serialize';
+import useTranslation from '../hooks/useTranslation';
 
 export async function getStaticProps() {
   const allPostsData = getAllPostsData();
@@ -30,6 +31,7 @@ export async function getStaticProps() {
 
 export default function News({allPostsData}){
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const { t } = useTranslation();
 
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
@@ -40,11 +42,11 @@ export default function News({allPostsData}){
     : allPostsData;
 
   const categories = [
-    '#メディアアシスト',
-    '#イベント',
-    '#インタビュー',
-    '#サービス',
-    '#コラボレーション',
+    t('newsCategoryMediaAssist'),
+    t('newsCategoryEvents'),
+    t('newsCategoryInterview'),
+    t('newsCategoryService'),
+    t('newsCategoryCollaboration'),
   ];
 
   const noNewsMessage = selectedCategory && filteredPosts.length === 0
@@ -94,7 +96,7 @@ export default function News({allPostsData}){
                 <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
                   <div className='xl:col-span-2'>
                     <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">News</p>
-                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>事業活動の近況をこちらでご確認いただけます。</p>
+                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>{t('newsIntro')}</p>
                   </div>
                 </div>
                 <div className='flex justify-center pt-5 md:pt-14'>

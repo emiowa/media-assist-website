@@ -1,6 +1,8 @@
 import React from "react";
+import useTranslation from '../hooks/useTranslation';
 
 export default function ContactForm() {
+  const { t } = useTranslation();
     const [result, setResult] = React.useState("");
   
     const onSubmit = async (event) => {
@@ -30,36 +32,36 @@ export default function ContactForm() {
       <div>
         <form onSubmit={onSubmit}>
             <div className="pb-6">
-                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="email">メールアドレス</label><br />
+                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="email">{t('contactFormEmail')}</label><br />
                 <div className="w-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                   <input className="w-full block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0" type="email" name="メールアドレス" id="email" placeholder="yamada@email.com" required/>
                 </div>
             </div>
             <div className="pb-6">
-                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="name">お名前</label><br />
+                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="name">{t('contactFormName')}</label><br />
                 <div className="w-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
-                  <input className="w-full block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0" type="text" name="お名前" id="name" placeholder="ヤマダ　アキラ" required/>
+                  <input className="w-full block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0" type="text" name="お名前" id="name" placeholder= {t('contactFormNamePlaceholder')} required/>
                 </div>
             </div>
             <div className="pb-6">
-                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black pb-2 dark:text-media-white">ご所属</label>
+                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black pb-2 dark:text-media-white">{t('contactFormSelectOption')}</label>
                 <div className="flex items-center">
                   <input className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 accent-indigo-600" type="checkbox" name="ご所属" value="個人" id="個人" />
-                  <p className="text-media-black pl-3 dark:text-media-white">個人</p><br />
+                  <p className="text-media-black pl-3 dark:text-media-white">{t('contactFormSelectOption1')}</p><br />
                 </div>
                 <div className="flex items-center">
                   <input className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 accent-indigo-600" type="checkbox" name="ご所属" value="法人" id="法人" />
-                  <p className="text-media-black pl-3 dark:text-media-white">法人</p>
+                  <p className="text-media-black pl-3 dark:text-media-white">{t('contactFormSelectOption2')}</p>
                 </div>
             </div>
             <div className="pb-12">
-                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="request">お問い合わせ内容</label><br />
+                <label className="after:content-['*'] after:ml-0.5 after:text-media-red text-media-black dark:text-media-white" htmlFor="request">{t('contactFormMessage')}</label><br />
                 <div className="w-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                   <textarea className="w-full block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0" name="お問い合わせ内容" id="request" required></textarea>
                 </div>
             </div>
             <div className="flex justify-center">
-                <button className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-white font-medium border border-indigo-600 bg-gradient-to-tr from-indigo-600 to-indigo-500 hover:drop-shadow-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white' type="submit">送信</button>
+                <button className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-white font-medium border border-indigo-600 bg-gradient-to-tr from-indigo-600 to-indigo-500 hover:drop-shadow-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white' type="submit">{t('contactFormSubmitButton')}</button>
             </div>
         </form>
         <span>{result}</span>

@@ -1,6 +1,9 @@
 import React from 'react';
+import useTranslation from '../hooks/useTranslation';
 
 const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory, noNewsMessage }) => {
+  const { t } = useTranslation();
+  
   return (
     <div>
     <div className='grid grid-cols-2 md:grid-cols-3 gap-3 text-sm lg:flex md:text-base justify-center mt-8'>
@@ -25,7 +28,7 @@ const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory, noNew
             : 'text-media-white bg-transparent font-normal'
         }`}
       >
-        <p className=''>すべて</p>
+        <p className=''>{t('artistCategoryAll')}</p>
       </button>
     </div>
     {noNewsMessage && (

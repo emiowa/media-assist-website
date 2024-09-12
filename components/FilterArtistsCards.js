@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import useTranslation from '../hooks/useTranslation';
 
 const FilterArtistsCards = ({ categories, selectedCategory, handleCategoryClick, resetCategory }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className='grid grid-cols-2 md:grid-cols-3 gap-3 text-sm lg:flex md:text-base justify-center mt-8'>
       {categories.map(category => (
@@ -26,7 +29,7 @@ const FilterArtistsCards = ({ categories, selectedCategory, handleCategoryClick,
             : 'text-media-white bg-transparent font-normal'
         }`}
       >
-        <span className=''>すべて</span>
+        <span>{t('artistCategoryAll')}</span>
       </button>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from "../components/Layout"
 import ContactForm from '@/components/ContactForm';
 import { useEffect, useRef } from 'react';
+import useTranslation from '../hooks/useTranslation';
 
 const useIntersectionObserver = (elements, animationClass) => {
     useEffect(() => {
@@ -33,6 +34,7 @@ const useIntersectionObserver = (elements, animationClass) => {
   };
 
 export default function Contact(){
+    const { t } = useTranslation();
 
     const pdfButton = () => {
         if (typeof window !== 'undefined'){
@@ -173,8 +175,8 @@ export default function Contact(){
                             </div>
                         </div>
                         <div className='pt-28'>
-                            <p className='text-media-black font-medium text-2xl pb-6 md:text-3xl dark:text-media-white'>お問い合わせ</p>
-                            <p className='text-media-black leading-loose pb-12 dark:text-media-white'>お問い合わせいただきました件については３営業日以内にご案内の予定です。<br />ご案内までお待ちいただければ幸いです。</p>
+                            <p className='text-media-black font-medium text-2xl pb-6 md:text-3xl dark:text-media-white'>{t('contactFormTitle')}</p>
+                            <p className='text-media-black leading-loose pb-12 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactFormIntro')}} />
                             {/* Inquiry section for desktop screens */}
                             <div className='hidden xl:pb-36 xl:grid xl:grid-cols-2 xl:gap-10'>
                                 <div className='col-start-1 col-span-1 xl:pb-0'>

@@ -26,10 +26,10 @@ export default function Artists({allArtistsData}){
   const [selectedArtist, setSelectedArtist] = useState(null);
 
   const categories = [
-    { id: '1', label: 'イラストレーター', icon: '/cat-paw-category-1.svg' },
-    { id: '2', label: 'マンガ家', icon: '/cat-paw-category-2.svg' },
-    { id: '3', label: 'デザイナー', icon: '/cat-paw-category-3.svg' },
-    { id: '4', label: 'アニメーター', icon: '/cat-paw-category-4.svg' },
+    { id: '1', label: t('artistCategoryIllustrator'), icon: '/cat-paw-category-1.svg' },
+    { id: '2', label: t('artistCategoryManga'), icon: '/cat-paw-category-2.svg' },
+    { id: '3', label: t('artistCategoryDesigner'), icon: '/cat-paw-category-3.svg' },
+    { id: '4', label: t('artistCategoryAnimator'), icon: '/cat-paw-category-4.svg' },
   ];
 
   // Handle category click
