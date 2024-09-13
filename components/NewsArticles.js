@@ -5,9 +5,14 @@ import Link from 'next/link';
 import {useRef} from 'react';
 import useIntersectionObserver from '../components/intersection-observer';
 import useTranslation from '../hooks/useTranslation';
+import { useRouter } from 'next/router';
 
-const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArticle, summary, content, hashtagCategory, linkHref }) => {
+const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArticle, summary, newsContent, hashtagCategory, linkHref }) => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
+
+  const staticContent = "<br><br>●社名及び所在地<br>旧）<br>株式会社ICDSメディアアシスト<br>〒102-0083　東京都千代田区麹町3丁目6-5<br>03-6555-2502<br>新)<br>株式会社メディアアシスト<br>〒170-6045　東京都豊島区東池袋3丁目1-1<br>03-5957-7244<br><br>●シンボルマーク及びロゴタイプ<br>旧)<br><img src='../icds-media-assist-logo.png' width='200' /><br>新)<br><img src='../media-assist-new-logo.png' width='200' />"
+
   const articleRef = useRef(null);
   useIntersectionObserver([articleRef], 'animateFadeFromDown');
 
@@ -25,20 +30,22 @@ const NewsArticles = ({ id, date, profilePicture, authorName, postDate, titleArt
             {/* <p className='text-media-black text-sm opacity-70'>{postDate}</p> */}
           {/* </div> */}
         </div>
-          <p className='text-media-black font-bold text-lg mt-2 pb-3 md:text-2xl'>{titleArticle}</p>
-          <p className='text-media-black leading-loose'>{summary}</p>
-          {content && (
-            <div className='text-media-black leading-loose'><MDXRemote {...content} /></div>
+          <p className='text-media-black font-bold text-lg mt-2 pb-3 md:text-2xl'>{titleArticle[locale]}</p>
+          <p className='text-media-black leading-loose'>{summary[locale]}</p>
+          {staticContent && (
+            <div className='text-media-black leading-loose'>
+              <p dangerouslySetInnerHTML={{__html: staticContent}} />
+            </div>
           )}
-          <div>
+          <div className='flex justify-end pt-3'>
             {Array.isArray(hashtagCategory) ? (
-              <ul className='flex justify-end pt-3'>
+              <div className=''>
                 {hashtagCategory.map((hashtag, index) => (
-                  <li key={index} className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtag}</li>
+                  <p key={index} className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtag[locale]}</p>
                 ))}
-              </ul>
+              </div>
             ) : (
-              <p className='text-slate-400 dark:text-slate-500'>{hashtagCategory}</p>
+              <p className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtagCategory[locale]}</p>
             )}
         </div>
           {linkHref && (

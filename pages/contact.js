@@ -57,33 +57,33 @@ export default function Contact(){
                     <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
                         <div className='pt-32 md:my-auto md:h-screen md:flex md:flex-col md:justify-center'>
                             <div className='opacity-0 text-center animateFadeFromDown'>
-                                <p className="text-media-black text-2xl font-bold pb-2 md:text-5xl md:pb-4 md:pt-10 dark:text-media-white">個人情報の取り扱いについて</p>
-                                <p className='text-media-black text-xl font-medium pb-8 md:text-4xl md:pb-12 dark:text-media-white'>個人情報保護方針</p>
+                                <p className="text-media-black text-2xl font-bold pb-2 md:text-5xl md:pb-4 md:pt-10 dark:text-media-white">{t('contactTitle')}</p>
+                                <p className='text-media-black text-xl font-medium pb-8 md:text-4xl md:pb-12 dark:text-media-white'>{t('contactSubtitle')}</p>
                             </div>
                             <div className='opacity-0 mx-auto w-full bg-gradient-to-tr from-indigo-100 to-indigo-200 drop-shadow-lg rounded-xl py-10 lg:w-4/5 lg:rounded-bglg animateFadeFromDownDelay dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
                                 <div className='md:grid md:grid-cols-2 md:mx-auto'>
-                                    <div className='flex flex-col justify-center items-center md:mx-auto'>
-                                        <div className='pb-8 md:pb-10'>
-                                            <p className='text-media-black font-medium text-xl md:text-2xl dark:text-media-white'>株式会社</p>
-                                            <p className='text-media-black font-bold text-2xl md:text-4xl dark:text-media-white'>メディアアシスト</p>
+                                    <div className='flex flex-col justify-center items-center md:items-start md:mx-auto'>
+                                        <div className='pb-8 text-center md:text-start md:pb-10'>
+                                            <p className='text-media-black font-medium text-xl md:text-2xl dark:text-media-white'>{t('contactIntroSubtitle')}</p>
+                                            <p className='text-media-black font-bold text-2xl md:text-4xl dark:text-media-white'>{t('contactIntroTitle')}</p>
                                         </div>
-                                        <div className='pb-6 md:pb-10'>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>制定日　2023年 5月 1日</p>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>最終改定日　2023年 5月 1日</p>
+                                        <div className='pb-6 text-center md:text-start md:pb-10'>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation1')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation2')}</p>
                                         </div>
-                                        <div className='pb-10 md:pb-0'>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>株式会社メディアアシスト</p>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>代表取締役　　松城　麻以子</p>
+                                        <div className='pb-10 text-center md:text-start md:pb-0'>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation3')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation4')}</p>
                                             <p className='text-media-black text-base md:text-lg dark:text-media-white'>inquiry@icds-media.co.jp</p>
                                         </div>
                                     </div>
                                     {/* Button for laptop and desktop screens */}
                                     <div className='hidden md:flex md:m-auto'>
-                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600'>個人情報保護方針・PDF　→</button>
+                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactIntroButton')}} />
                                     </div>
                                     {/* Button for mobile screens */}
                                     <div className='flex justify-center md:hidden'>
-                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600'>個人情報保護方針・PDF　→</button>
+                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactIntroButton')}} />
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@ export default function Contact(){
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>個人情報の取得・利用・提供</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は、円滑な企業活動を目的とした特定の範囲内において個人情報を適正に取得・利用し、目的外利用は認めないものとします。目的外利用を未然に防ぐ取り組みを行いつつ、利用が判明した場合には内規に従い厳正なる措置を講じます。<br />また、当社事業活動の中で外部に提供が必要となった個人情報については、その保有者への事前の承諾を得た場合のみ可能といたします。</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy1Title')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy1Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -115,10 +115,10 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報の取り扱いに関する法令その他規範の遵守</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy2Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報の取り扱いに関する<br />法令その他規範の遵守</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は以下の法令を原則に、国及び自治体の定める各種法令に従い、その範囲内において個人情報を取り扱うものといたします。<br />「個人情報の保護に関する法律」(平成十五年法律第五十七号)<br />「行政手続における特定の個人を識別するための番号の利用等に関する法律」(平成二十五年法律第二十七号)</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy2TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy2Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -133,10 +133,10 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報の漏えい、滅失又はき損の防止及び是正</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy3Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報の漏えい、<br />滅失又はき損の防止及び是正</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white'>当社は、個人情報への不正アクセス、個人情報の漏えい、滅失又はき損に対し、適切な予防策ならびに是正策を講じます。</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy3TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy3Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -150,8 +150,8 @@ export default function Contact(){
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>苦情及び相談への対応</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white'>当社の個人情報の取扱い及び個人情報保護マネジメントシステムに関する苦情・相談には、受付次第、適切かつ迅速に対応を行います。</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy4Title')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy4Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -166,10 +166,10 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>個人情報保護マネジメントシステムの継続的改善</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy5Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>個人情報保護<br />マネジメントシステムの継続的改善</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white'>当社において個人情報の取り扱いを適正なものとするため、個人情報マネジメントシステムを構築・運用し、定期的な従業者教育、監査の実施により継続的な改善に努めていきます。</p>
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy5TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy5Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
