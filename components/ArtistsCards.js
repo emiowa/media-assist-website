@@ -8,10 +8,8 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, ar
 
   return (
     <div className='rounded-xl w-80 drop-shadow-lg shadow-lg bg-slate-50 transform scale-100 transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer dark:bg-gradient-to-tr dark:from-indigo-200 dark:to-indigo-100' onClick={() => onClick(id)}>
-        <div className='relative w-full h-96 overflow-hidden rounded-t-xl'>
-            <div className='relative w-full h-full'>
-                <Image className='absolute inset-0 object-cover' src={illustration} alt={`${t(`artistInfo.artist${index + 1}.artistName`)}'s illustration`} width={320} height={384} />
-            </div>
+        <div className='relative w-full h-auto md:h-96 overflow-hidden rounded-t-xl'>
+            <Image className='object-cover' src={illustration} alt={`${t(`artistInfo.artist${index + 1}.artistName`)}'s illustration`} width={320} height={384} />
         </div>
         <div className='flex justify-center pt-4 pb-5 px-6 z-10 bg-slate-50 rounded-b-xl'>
             <div className='text-media-black'>

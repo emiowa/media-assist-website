@@ -15,15 +15,15 @@ const Modal = ({ isOpen, onClose, artist }) => {
 
   return (
     <div className={styles.overlay}>
-      <div className='w-full m-auto pt-12 flex justify-center items-center'>
+      <div className='w-full h-20 overflow-scroll md:h-auto m-auto pt-12 flex justify-center items-center'>
       <div className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
         {artist && (
           <>
-            <h2 className='text-2xl font-bold text-center text-media-black pb-5'>{t(`artistInfo.artist${artist.id}.artistName`)}</h2>
-            <div className='flex flex-col gap-2 pb-8'>
+            <h2 className='text-2xl font-bold text-center text-media-black pb-2 md:pb-5'>{t(`artistInfo.artist${artist.id}.artistName`)}</h2>
+            <div className='flex flex-col gap-0 pb-3 md:gap-2 md:pb-8'>
                 {artist.category.map((cat, index) => (
                     <div key={index} className='flex items-center gap-2 pb-2'>
                         <Image key={index} src={cat} alt={`paw-category-${index}.svg`} width={20} height={20} />
@@ -42,7 +42,7 @@ const Modal = ({ isOpen, onClose, artist }) => {
                     </svg>
                 </button>
             </div>
-            <p className='text-xs text-media-black pt-8'>{t('modalComponent.modalCopyrightWarning')}</p>
+            <p className='text-xs text-media-black pt-3 md:pt-8'>{t('modalComponent.modalCopyrightWarning')}</p>
           </>
         )}
       </div>
