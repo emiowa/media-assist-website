@@ -231,7 +231,7 @@ export default function Home({allPostsData, featuredArtists}){
                                         {allPostsData.map(( post, index ) => (
                                                 <NewsArticles
                                                     key={post.id}
-                                                    id={post.id}
+                                                    id={`newsPost${index}`}
                                                     newsTitle={t(`newsPosts.newsPost${index + 1}.newsTitle`)}
                                                     newsSummary={t(`newsPosts.newsPost${index + 1}.newsSummary`)}
                                                     linkHref={`/news?id=newsPost${index}#${index}`}

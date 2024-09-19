@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose, artist }) => {
 
   return (
     <div className={styles.overlay}>
-      <div className='pt-12 flex justify-center items-center'>
+      <div className='w-full m-auto pt-12 flex justify-center items-center'>
       <div className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;

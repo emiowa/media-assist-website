@@ -45,7 +45,7 @@ const NewsArticles = ({ id, linkHref, newsContent, hashtagCategory, index }) => 
         </div>
           {linkHref && (
             <div className='mt-12'>
-              <Link href={linkHref} className='border border-media-black bg-transparent rounded-full py-2 px-4 text-media-black hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
+              <Link href={`/news?id=newsPost${index}#${index}`} className='border border-media-black bg-transparent rounded-full py-2 px-4 text-media-black hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
                 {t('homePage.indexNewsReadMoreButton')}
               </Link>
             </div>
