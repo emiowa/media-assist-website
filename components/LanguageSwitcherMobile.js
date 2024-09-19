@@ -57,7 +57,7 @@ const LanguageSwitcherMobile = () => {
         <div className="absolute mt-3 px-2 w-fit bg-white border border-slate-200 rounded-md shadow-md z-10 dark:bg-indigo-900 dark:border-slate-300">
           <div className="py-1">
             <button onClick={() => handleLanguageChange('en')} className={`block px-4 py-2 text-media-black text-lg dark:text-media-white w-full text-center ${locale === 'en' ? 'font-bold' : 'font-normal'}`}>English</button>
-            <button onClick={() => handleLanguageChange('es')} className={`block px-4 py-2 text-media-black text-lg dark:text-media-white w-full text-center ${locale === 'sp' ? 'font-bold' : 'font-normal'}`}>Español</button>
+            <button onClick={() => handleLanguageChange('es')} className={`block px-4 py-2 text-media-black text-lg dark:text-media-white w-full text-center ${locale === 'es' ? 'font-bold' : 'font-normal'}`}>Español</button>
             <button onClick={() => handleLanguageChange('jp')} className={`block px-4 py-2 text-media-black text-lg dark:text-media-white w-full text-center ${locale === 'jp' ? 'font-bold' : 'font-normal'}`}>日本語</button>
           </div>
         </div>
