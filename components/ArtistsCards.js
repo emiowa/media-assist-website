@@ -13,7 +13,7 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, ar
                 <Image className='absolute inset-0 object-cover' src={illustration} alt={`${t(`artistInfo.artist${index + 1}.artistName`)}'s illustration`} width={320} height={384} />
             </div>
         </div>
-        <div className='flex justify-center pt-4 pb-5 px-6'>
+        <div className='flex justify-center pt-4 pb-5 px-6 z-10 bg-slate-50 rounded-b-xl'>
             <div className='text-media-black'>
                 <h3 className='font-bold text-lg'>{t(`artistInfo.artist${index + 1}.artistName`)}</h3>
                 <div>
