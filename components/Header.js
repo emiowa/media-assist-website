@@ -145,7 +145,7 @@ useEffect(() => {
       <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
         <div className="z-10 h-screen origin-top-right rounded-md bg-white bg-opacity-10 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none space-y-1 dark:bg-indigo-900 dark:bg-opacity-10">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-          <div className='h-full flex flex-col pt-20'>
+          <div className='h-full flex flex-col pt-5'>
             <div className='flex justify-center'>
               {renderIndicator('/')}
               <Link href='/' className={`block px-3 py-3 text-media-black dark:text-media-white ${router.pathname === '/' ? 'font-bold text-2xl' : 'font-normal text-xl'}`} aria-current={router.pathname === '/' ? 'page' : undefined}>Home</Link>

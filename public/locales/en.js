@@ -70,7 +70,7 @@ export default {
         artist4: {
             artistName: "Sanukinaoya",
             categoryName: ["Illustrator", "Manga Artist", "Animator"],
-            artistPresentation: "Born in Kyoto Japan. Drawing illustration for Books, magazines, mucic and movie works. Published manga 'CONFUSED', collaborating with Yuuki Fukutomi, who is the guitarist of Japanese music band 'Homecomings', while working on their music art works. Using Photoshop、Illustrator、AfterEffects.",
+            artistPresentation: "Born in Kyoto Japan. Drawing illustration for Books, magazines, mucic and movie works. Published manga 'CONFUSED', collaborating with Yuuki Fukutomi, who is the guitarist of Japanese music band 'Homecomings', while working on their music art works. Using Photoshop, Illustrator, AfterEffects.",
         },
     },
     newsPage: {
