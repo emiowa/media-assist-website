@@ -40,7 +40,7 @@ const LanguageSwitcherMobile = () => {
   // Language options
   const languages = {
     en: 'English',
-    sp: 'Español',
+    es: 'Español',
     jp: '日本語',
   };
 
