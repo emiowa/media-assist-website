@@ -19,10 +19,6 @@ const LanguageSwitcherMobile = () => {
 
   const closeDropdown = () => setIsOpen(false);
 
-  // const changeLanguage = (lang) => {
-  //   router.push(router.pathname, router.asPath, { locale: lang });
-  //   closeDropdown();
-  // };
   const handleLanguageChange = (lang) => {
     if (lang === 'jp') {
       // Change locale for Japanese
@@ -62,21 +58,6 @@ const LanguageSwitcherMobile = () => {
           </div>
         </div>
       )}
-      {/* {isOpen && (
-        <div className="absolute right-0 mt-2 w-full bg-white border border-slate-200 rounded-md shadow-md z-10 dark:bg-indigo-900 dark:border-slate-300">
-          <div className="py-1">
-            {Object.keys(languages).map((key) => (
-              <button
-                key={key}
-                onClick={() => changeLanguage(key)}
-                className={`block px-4 py-2 w-full text-center text-media-black dark:text-media-white ${locale === key ? 'font-bold' : 'font-normal'}`}
-              >
-                {languages[key]}
-              </button>
-            ))}
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };
