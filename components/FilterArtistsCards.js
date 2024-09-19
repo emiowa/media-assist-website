@@ -29,7 +29,7 @@ const FilterArtistsCards = ({ categories, selectedCategory, handleCategoryClick,
             : 'text-media-white bg-transparent font-normal'
         }`}
       >
-        <span>{t('artistCategoryAll')}</span>
+        <span>{t('artistPage.artistCategoryAll')}</span>
       </button>
     </div>
   );

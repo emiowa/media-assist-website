@@ -11,11 +11,11 @@ export default function Footer(){
                     <div className='w-full'>
                         <div className='pb-20 md:pb-16'>
                             <p className='text-media-white font-bold text-3xl pb-1 md:text-4xl md:pb-2'>Media Assist</p>
-                            <p className='text-media-white text-base font-normal md:text-xl lg:text-2xl md:font-medium'>{t('indexSlogan')}</p>
+                            <p className='text-media-white text-base font-normal md:text-xl lg:text-2xl md:font-medium'>{t('homePage.indexSlogan')}</p>
                         </div>
                         <div>
-                            <p className='hidden text-media-white text-base md:pb-2 lg:flex'>{t('footerAddress')}</p>
-                            <p className='text-media-white text-sm md:text-base md:pb-2 lg:hidden' dangerouslySetInnerHTML={{__html: t('footerAddressSmscreen')}} />
+                            <p className='hidden text-media-white text-base md:pb-2 lg:flex'>{t('footer.footerAddress')}</p>
+                            <p className='text-media-white text-sm md:text-base md:pb-2 lg:hidden' dangerouslySetInnerHTML={{__html: t('footer.footerAddressSmscreen')}} />
                             <p className='text-media-white text-sm md:text-base'>Tel: (03)5957-7244</p>
                         </div>
                     </div>

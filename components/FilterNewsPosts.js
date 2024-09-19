@@ -28,7 +28,7 @@ const FilterNewsPosts = ({ categories, selectedCategory, onSelectCategory, noNew
             : 'text-media-white bg-transparent font-normal'
         }`}
       >
-        <p className=''>{t('artistCategoryAll')}</p>
+        <p className=''>{t('artistPage.artistCategoryAll')}</p>
       </button>
     </div>
     {noNewsMessage && (

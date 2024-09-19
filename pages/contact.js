@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout"
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '../components/ContactForm';
 import { useEffect, useRef } from 'react';
 import useTranslation from '../hooks/useTranslation';
 
@@ -57,33 +57,33 @@ export default function Contact(){
                     <div className='mx-auto max-w-7xl px-3 md:px-10 xl:px-24'>
                         <div className='pt-32 md:my-auto md:h-screen md:flex md:flex-col md:justify-center'>
                             <div className='opacity-0 text-center animateFadeFromDown'>
-                                <p className="text-media-black text-2xl font-bold pb-2 md:text-5xl md:pb-4 md:pt-10 dark:text-media-white">{t('contactTitle')}</p>
-                                <p className='text-media-black text-xl font-medium pb-8 md:text-4xl md:pb-12 dark:text-media-white'>{t('contactSubtitle')}</p>
+                                <p className="text-media-black text-2xl font-bold pb-2 md:text-5xl md:pb-4 md:pt-10 dark:text-media-white">{t('contactPage.contactTitle')}</p>
+                                <p className='text-media-black text-xl font-medium pb-8 md:text-4xl md:pb-12 dark:text-media-white'>{t('contactPage.contactSubtitle')}</p>
                             </div>
                             <div className='opacity-0 mx-auto w-full bg-gradient-to-tr from-indigo-100 to-indigo-200 drop-shadow-lg rounded-xl py-10 lg:w-4/5 lg:rounded-bglg animateFadeFromDownDelay dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800'>
                                 <div className='md:grid md:grid-cols-2 md:mx-auto'>
                                     <div className='flex flex-col justify-center items-center md:items-start md:mx-auto'>
                                         <div className='pb-8 text-center md:text-start md:pb-10'>
-                                            <p className='text-media-black font-medium text-xl md:text-2xl dark:text-media-white'>{t('contactIntroSubtitle')}</p>
-                                            <p className='text-media-black font-bold text-2xl md:text-4xl dark:text-media-white'>{t('contactIntroTitle')}</p>
+                                            <p className='text-media-black font-medium text-xl md:text-2xl dark:text-media-white'>{t('contactPage.contactIntroSubtitle')}</p>
+                                            <p className='text-media-black font-bold text-2xl md:text-4xl dark:text-media-white'>{t('contactPage.contactIntroTitle')}</p>
                                         </div>
                                         <div className='pb-6 text-center md:text-start md:pb-10'>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation1')}</p>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation2')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactPage.contactInformation1')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactPage.contactInformation2')}</p>
                                         </div>
                                         <div className='pb-10 text-center md:text-start md:pb-0'>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation3')}</p>
-                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactInformation4')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactPage.contactInformation3')}</p>
+                                            <p className='text-media-black text-base md:text-lg dark:text-media-white'>{t('contactPage.contactInformation4')}</p>
                                             <p className='text-media-black text-base md:text-lg dark:text-media-white'>inquiry@icds-media.co.jp</p>
                                         </div>
                                     </div>
                                     {/* Button for laptop and desktop screens */}
                                     <div className='hidden md:flex md:m-auto'>
-                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactIntroButton')}} />
+                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactPage.contactIntroButton')}} />
                                     </div>
                                     {/* Button for mobile screens */}
                                     <div className='flex justify-center md:hidden'>
-                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactIntroButton')}} />
+                                        <button type='button' onClick={pdfButton} className='relative inline-flex items-center justify-center rounded-md py-3 px-8 text-lg text-media-black border border-media-black font-medium hover:text-media-white hover:drop-shadow-md hover:border-indigo-600 hover:bg-gradient-to-tr hover:from-indigo-600 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-600' dangerouslySetInnerHTML={{__html: t('contactPage.contactIntroButton')}} />
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +99,8 @@ export default function Contact(){
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy1Title')}</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy1Paragraph')}} />
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPage.contactPolicy1Title')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactPolicy1Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -115,10 +115,10 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy2Title')}</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPage.contactPolicy2Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy2TitleMobile')}</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy2Paragraph')}} />
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPage.contactPolicy2TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactPolicy2Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -133,10 +133,10 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy3Title')}</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPage.contactPolicy3Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy3TitleMobile')}</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy3Paragraph')}} />
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPage.contactPolicy3TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactPolicy3Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -150,8 +150,8 @@ export default function Contact(){
                                 </div>
                                 <div className='border border-indigo-600 bg-white rounded-xl flex-grow flex flex-col dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5 flex-grow'>
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy4Title')}</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy4Paragraph')}} />
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:text-xl dark:text-media-white'>{t('contactPage.contactPolicy4Title')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactPolicy4Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
@@ -166,17 +166,17 @@ export default function Contact(){
                                 <div className='border border-indigo-600 bg-white rounded-xl dark:bg-media-black dark:border-media-white'>
                                     <div className='px-3 pb-5 md:px-5'>
                                         {/* Title for laptop and desktop screens */}
-                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPolicy5Title')}</p>
+                                        <p className='hidden md:text-center md:flex md:text-media-black md:font-medium md:justify-center md:pb-5 md:pt-16 md:text-xl dark:text-media-white'>{t('contactPage.contactPolicy5Title')}</p>
                                         {/* Title for mobile screens */}
-                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPolicy5TitleMobile')}</p>
-                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPolicy5Paragraph')}} />
+                                        <p className='text-media-black text-lg font-medium text-center pb-5 pt-16 md:hidden dark:text-media-white'>{t('contactPage.contactPolicy5TitleMobile')}</p>
+                                        <p className='text-media-black text-base leading-loose dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactPolicy5Paragraph')}} />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='pt-28'>
-                            <p className='text-media-black font-medium text-2xl pb-6 md:text-3xl dark:text-media-white'>{t('contactFormTitle')}</p>
-                            <p className='text-media-black leading-loose pb-12 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactFormIntro')}} />
+                            <p className='text-media-black font-medium text-2xl pb-6 md:text-3xl dark:text-media-white'>{t('contactPage.contactFormTitle')}</p>
+                            <p className='text-media-black leading-loose pb-12 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('contactPage.contactFormIntro')}} />
                             {/* Inquiry section for desktop screens */}
                             <div className='hidden xl:pb-36 xl:grid xl:grid-cols-2 xl:gap-10'>
                                 <div className='col-start-1 col-span-1 xl:pb-0'>

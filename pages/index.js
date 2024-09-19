@@ -10,7 +10,7 @@ import { getAllArtistsData } from '../lib/artists';
 import NewsArticles from '../components/NewsArticles';
 import { serialize } from 'next-mdx-remote/serialize';
 import lottie from 'lottie-web';
-import ArtistsCards from '@/components/ArtistsCards';
+import ArtistsCards from '../components/ArtistsCards';
 import Modal from '../components/Modal';
 import useTranslation from '../hooks/useTranslation';
 
@@ -42,6 +42,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({allPostsData, featuredArtists}){
+    
     const router = useRouter();
     const { t } = useTranslation();
 
@@ -138,6 +139,7 @@ export default function Home({allPostsData, featuredArtists}){
       setIsModalOpen(false);
       setSelectedArtist(null);
     };
+    
 
     return(
         <div>
@@ -146,7 +148,7 @@ export default function Home({allPostsData, featuredArtists}){
                     <div className='h-screen flex flex-col justify-center items-center md:pt-36'>
                         <div className='flex flex-col items-center justify-center'>
                             <p className='text-media-black font-bold text-4xl pb-2 md:text-6xl dark:text-media-white'>Media Assist</p>
-                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>{t('indexSlogan')}</p>
+                            <p className='text-media-black font-medium text-xl md:text-3xl dark:text-media-white'>{t('homePage.indexSlogan')}</p>
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
@@ -158,27 +160,27 @@ export default function Home({allPostsData, featuredArtists}){
                     
                     <div className='bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-ss-3xl lg:rounded-ss-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800' ref={slideInRightRef1}>
                         <div className='text-center pb-10 pt-14 md:pb-10 md:pt-20'>
-                            <p className='text-media-white font-bold text-2xl pb-1 md:text-4xl lg:text-5xl md:pb-2 lg:pb-4'>{t('indexServiceTitle')}</p>
-                            <p className='text-media-white font-medium text-2xl md:text-4xl lg:text-5xl md:font-medium'>{t('indexServiceSubtitle')}</p>
+                            <p className='text-media-white font-bold text-2xl pb-1 md:text-4xl lg:text-5xl md:pb-2 lg:pb-4'>{t('homePage.indexServiceTitle')}</p>
+                            <p className='text-media-white font-medium text-2xl md:text-4xl lg:text-5xl md:font-medium'>{t('homePage.indexServiceSubtitle')}</p>
                         </div>
                         <div className='mx-auto max-w-7xl px-3 pb-10 md:px-10 lg:px-24 lg:pb-20'>
                             <div className='lg:flex justify-center'>
                                 <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList1')}} />
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('homePage.indexServiceList1')}} />
                                 </div>
                                 <div className='px-1 py-2 drop-shadow-lg lg:px-4 lg:py-5'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList2')}} />
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('homePage.indexServiceList2')}} />
                                 </div>
                             </div>
                             <div className='lg:flex justify-center items-center'>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('indexServiceList3')}</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('homePage.indexServiceList3')}</p>
                                 </div>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('indexServiceList4')}} />
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg leading-normal text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white' dangerouslySetInnerHTML={{__html: t('homePage.indexServiceList4')}} />
                                 </div>
                                 <div className='px-1 py-2 lg:px-4 lg:py-1 drop-shadow-lg'>
-                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('indexServiceList5')}</p>
+                                    <p className='bg-gradient-to-tr from-indigo-50 to-indigo-200 p-6 rounded-lg text-media-black font-normal text-lg text-center md:font-medium md:text-xl dark:bg-gradient-to-tr dark:from-indigo-600 dark:to-indigo-500 dark:text-media-white'>{t('homePage.indexServiceList5')}</p>
                                 </div>
                             </div>
                         </div>
@@ -198,12 +200,13 @@ export default function Home({allPostsData, featuredArtists}){
                                 </h2>
                             </div>
                             <div className='grid grid-cols-1 gap-y-10 pb-20 justify-items-center md:grid-cols-2 md:gap-y-10 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-14'>
-                                {featuredArtists.map(artist => (
+                                {featuredArtists.map((artist, index) => (
                                     <div key={artist.id}>
                                         <ArtistsCards
-                                            artistName={artist.artistName}
+                                            artistName={t(`artistInfo.artist${index + 1}.artistName`)}
                                             illustration={artist.illustration}
                                             onClick={() => openModal(artist)}
+                                            index={index}
                                         />
                                     </div>
                                 ))}
@@ -225,17 +228,15 @@ export default function Home({allPostsData, featuredArtists}){
                             <div className='container mx-auto'>
                                 <div className='flex flex-col pb-32'>
                                     <div className='' ref={postsRef}>
-                                        {allPostsData.map(({ id, profilePicture, authorName, postDate, titleArticle, content, summary, hashtagCategory, linkHref }) => (
-                                            <div key={id}>
+                                        {allPostsData.map(( post, index ) => (
                                                 <NewsArticles
-                                                    profilePicture={profilePicture}
-                                                    authorName={authorName}
-                                                    postDate={postDate}
-                                                    titleArticle={titleArticle}
-                                                    summary={summary}
-                                                    linkHref={`/news?id=${id}#${id}`}
+                                                    key={post.id}
+                                                    id={post.id}
+                                                    newsTitle={t(`newsPosts.newsPost${index + 1}.newsTitle`)}
+                                                    newsSummary={t(`newsPosts.newsPost${index + 1}.newsSummary`)}
+                                                    linkHref={`/news?id=newsPost${index}#${index}`}
+                                                    index={index}
                                                 />
-                                            </div>
                                         ))}
                                     </div>
                                     {/* <div className={`hidden h-screen md:block ${isSticky ? 'sticky top-24' : ''}`} ref={recentEventsRef}>

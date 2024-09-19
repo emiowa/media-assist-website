@@ -42,15 +42,15 @@ export default function News({allPostsData}){
     : allPostsData;
 
   const categories = [
-    t('newsCategoryMediaAssist'),
-    t('newsCategoryEvents'),
-    t('newsCategoryInterview'),
-    t('newsCategoryService'),
-    t('newsCategoryCollaboration'),
+    t('newsPage.newsCategoryMediaAssist'),
+    t('newsPage.newsCategoryEvents'),
+    t('newsPage.newsCategoryInterview'),
+    t('newsPage.newsCategoryService'),
+    t('newsPage.newsCategoryCollaboration'),
   ];
 
   const noNewsMessage = selectedCategory && filteredPosts.length === 0
-    ? 'このカテゴリのニュースはまだありません。'
+    ? t('newsPage.newsNoCategoryMessage')
     : '';
 
   const router = useRouter();
@@ -96,7 +96,7 @@ export default function News({allPostsData}){
                 <div className="pt-12 pb-0 xl:grid xl:grid-cols-3 xl:items-center md:pt-10">
                   <div className='xl:col-span-2'>
                     <p className="opacity-0 text-media-white text-3xl font-bold pb-6 md:text-5xl lg:pb-4 animateFadeFromDown dark:text-media-white">News</p>
-                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>{t('newsIntro')}</p>
+                    <p className='opacity-0 text-media-white text-base font-normal leading-loose animateFadeFromDownDelay dark:text-media-white'>{t('newsPage.newsIntro')}</p>
                   </div>
                 </div>
                 <div className='flex justify-center pt-5 md:pt-14'>
@@ -113,21 +113,18 @@ export default function News({allPostsData}){
                 <div className='flex justify-center lg:mx-20 xl:mx-48 pb-36'>
                   <div className='' ref={postsRef}>
                     {filteredPosts.length > 0 ? (
-                      filteredPosts.map(post => (
-                        <div key={post.id} className=''>
+                      filteredPosts.map((post, index ) => (
                           <NewsArticles
+                            key={post.id}
                             id={post.id}
                             date={post.date}
-                            profilePicture={post.profilePicture}
-                            authorName={post.authorName}
-                            postDate={post.postDate}
-                            titleArticle={post.titleArticle}
-                            summary={post.summary}
-                            content={post.content}
-                            hashtagCategory={post.hashtagCategory}
+                            newsTitle={t(`newsPosts.newsPost${index + 1}.newsTitle`)}
+                            newsSummary={t(`newsPosts.newsPost${index + 1}.newsSummary`)}
+                            newsContent={t(`newsPosts.newsPost${index + 1}.newsContent`)}
+                            newsHashtagCategory={t(`newsPosts.newsPost${index + 1}.newsHashtagCategory`)}
                             linkHref={post.linkHref}
+                            index={index}
                           />
-                        </div>
                       ))
                     ) : (
                       <p className='text-center mt-4 text-media-black'>{noNewsMessage}</p>
