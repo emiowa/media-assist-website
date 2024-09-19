@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from "../components/Layout"
-import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import { createRef, useEffect, useState, useRef } from 'react';
@@ -42,12 +41,13 @@ export async function getStaticProps() {
 }
 
 export default function Home({allPostsData, featuredArtists}){
-    
     const router = useRouter();
     const { t } = useTranslation();
 
-    let animation3ContainerLight = useRef(null);
-    let animation3ContainerDark = useRef(null);
+    const animation3ContainerLight = useRef(null);
+    const animation3ContainerDark = useRef(null);
+    const [isLottieLoadedLight, setIsLottieLoadedLight] = useState(false);
+    const [isLottieLoadedDark, setIsLottieLoadedDark] = useState(false);
 
     useEffect(() => {
         const animLight = lottie.loadAnimation({
@@ -56,10 +56,11 @@ export default function Home({allPostsData, featuredArtists}){
             loop: true,
             autoplay: true,
             path: '/animations/MA-website-animation3json.json'
-        })
+        });
+        animLight.addEventListener('DOMLoaded', () => setIsLottieLoadedLight(true));
 
         return () => animLight.destroy();
-    }, [])
+    }, []);
 
     useEffect(() => {
         const animDark = lottie.loadAnimation({
@@ -68,10 +69,11 @@ export default function Home({allPostsData, featuredArtists}){
             loop: true,
             autoplay: true,
             path: '/animations/MA-website-animation3json-dark-version.json'
-        })
+        });
+        animDark.addEventListener('DOMLoaded', () => setIsLottieLoadedDark(true));
 
         return () => animDark.destroy();
-    }, [])
+    }, []);
 
     const recentEventsRef = useRef(null);
     const postsRef = useRef(null);
@@ -152,9 +154,17 @@ export default function Home({allPostsData, featuredArtists}){
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
-                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden" />
+                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden">
+                                {!isLottieLoadedLight && (
+                                    <div style={{width: '600px', height: '400px', backgroundColor: '#f0f0f0',}} />
+                                )}
+                            </div>
                             {/* Animation for dark mode */}
-                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block" />
+                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block">
+                                {!isLottieLoadedDark && (
+                                    <div style={{width: '600px', height: '400px', backgroundColor: '#2c2c2c',}} />
+                                )}
+                            </div>
                         </div>
                     </div>
                     

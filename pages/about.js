@@ -11,6 +11,8 @@ export default function AboutUs(){
 
     let animation1ContainerLight = useRef(null);
     let animation1ContainerDark = useRef(null);
+    const [isLottieLoadedLight, setIsLottieLoadedLight] = useState(false);
+    const [isLottieLoadedDark, setIsLottieLoadedDark] = useState(false);
 
     useEffect(() => {
         const animLight = lottie.loadAnimation({
@@ -19,10 +21,11 @@ export default function AboutUs(){
             loop: true,
             autoplay: true,
             path: '/animations/MA-website-animation1json.json'
-        })
+        });
+        animLight.addEventListener('DOMLoaded', () => setIsLottieLoadedLight(true));
 
         return () => animLight.destroy();
-    }, [])
+    }, []);
 
     useEffect(() => {
         const animDark = lottie.loadAnimation({
@@ -31,10 +34,11 @@ export default function AboutUs(){
             loop: true,
             autoplay: true,
             path: '/animations/MA-website-animation1json-dark-version.json'
-        })
+        });
+        animDark.addEventListener('DOMLoaded', () => setIsLottieLoadedDark(true));
 
         return () => animDark.destroy();
-    }, [])
+    }, []);
 
     const [isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -75,9 +79,17 @@ export default function AboutUs(){
                             </div>
                             <div className="flex justify-center animateFadeFromDown lg:justify-end">
                                 {/* Animation for light mode */}
-                                <div ref={animation1ContainerLight} className="w-11/12 md:max-w-lg dark:hidden" />
+                                <div ref={animation1ContainerLight} className="w-11/12 md:max-w-lg dark:hidden">
+                                    {!isLottieLoadedLight && (
+                                        <div style={{width: '600px', height: '400px', backgroundColor: '#f0f0f0',}} />
+                                    )}
+                                </div>
                                 {/* Animation for dark mode */}
-                                <div ref={animation1ContainerDark} className="hidden w-11/12 md:max-w-lg dark:block" />
+                                <div ref={animation1ContainerDark} className="hidden w-11/12 md:max-w-lg dark:block">
+                                    {!isLottieLoadedDark && (
+                                        <div style={{width: '600px', height: '400px', backgroundColor: '#2c2c2c',}} />
+                                    )}
+                                </div>
                             </div>
                         </div>
                         <div className="bg-gradient-to-tr from-indigo-200 to-indigo-100 rounded-3xl drop-shadow-lg py-10 px-3 md:px-16 md:rounded-bglg animateNotActive dark:bg-gradient-to-tr dark:from-indigo-900 dark:to-indigo-800" ref={slideInLeftRef1}>
