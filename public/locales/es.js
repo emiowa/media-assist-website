@@ -54,19 +54,19 @@ export default{
     },
     artistInfo: {
         artist1: {
+            artistName: "Ameya Haruyuki",
+            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
+            artistPresentation: "Trabaja como artista, escritor y compositor de Manga de fantasía de estilo japonés inspirado en la historia, la cultura y los festivales japoneses.",
+        },
+        artist2: {
             artistName: "Alala",
             categoryName: ["Ilustrador", "Artista Manga", "Diseñador"],
             artistPresentation: "Nacido en la ciudad de Saga, reside actualmente en Chiba, Japón. Graduado del Departamento de Manga e Ilustración de Yoyogi Animation School en Fukuoka. Ganó en dos ocaciones el premio a mejor artista de la Revista Juvenil. Mientras trabaja como oficinista, también trabaja como ilustrador y publica encargos y fan art en las redes sociales.",
         },
-        artist2: {
+        artist3: {
             artistName: "QUESTION No.6",
             categoryName: ["Ilustrador", "Artista Manga", "Diseñador"],
             artistPresentation: "QUESTION No.6 es un Ilustrador con trabajos representativos los cuáles incluyen las portadas de los dramas de la BBC 'Doctor Who' y los cómics 'Sherlock' (Titan Comics). En Japón, trabaja principalmente en ilustraciones publicitarias y diseños de productos.",
-        },
-        artist3: {
-            artistName: "Shiomi Kiki",
-            categoryName: ["Ilustrador", "Diseñador"],
-            artistPresentation: "Ilustrador residente en Osaka. Actualmente activo en campos como libros, material didáctico y publicidad. Dibuja ilustraciones de escenas que dan una idea de la historia y personajes deformados.",
         },
         artist4: {
             artistName: "Sanukinaoya",
@@ -74,24 +74,24 @@ export default{
             artistPresentation: "Ilustrador de la ciudad de Kyoto. Trabaja en ilustraciones para libros, música, películas, revistas, etc. Está a cargo del arte de la banda japonesa Homecomings y ha publicado el manga 'CONFUSED' con el guitarrista Yuki Fukutomi. Manejo de Photoshop, Illustrator y AfterEffects.",
         },
         artist5: {
+            artistName: "Shiomi Kiki",
+            categoryName: ["Ilustrador", "Diseñador"],
+            artistPresentation: "Ilustrador residente en Osaka. Actualmente activo en campos como libros, material didáctico y publicidad. Dibuja ilustraciones de escenas que dan una idea de la historia y personajes deformados.",
+        },
+        artist6: {
+            artistName: "Takasugikou",
+            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
+            artistPresentation: "Desde 2004 trabaja en el juego de rol de mesa 'GunDog' y en el juego de cartas coleccionables 'Sangokushi Taisen'. Hizo su debut como artista de manga en la revista de la editorial Hutaba. Desde entonces ha trabajado en muchas serializaciones de varias revistas. Sus obras 「Bentenbashi-minamishotengai jyoshi proress」「Shitsuji to watashi no mainichi gohan」「Otsukaredesune Kyoko-san」",
+        },
+        artist7: {
             artistName: "tokitokoro",
             categoryName: ["Ilustrator", "Artista Manga"],
             artistPresentation: "tokitokoro, utiliza el nombre【BANG】para sus trabajos en BL. Trabaja como artista de portadas para DC y como artista de interiores a lápiz y tinta para MARVEL. Dibuja con iPad, utiliza Procreate y otros programas.",
         },
-        artist6: {
+        artist8: {
             artistName: "yummy",
             categoryName: ["Ilustrator", "Artista Manga"],
             artistPresentation: "Nació en Osaka, actualmente vive en Okayama y trabaja como profesora en la Universidad de Ciencias y Artes de Kurashiki en Okayama. Se graduó en la Escuela de Diseño de Osaka. Después de trabajar como diseñadora gráfica durante 2 años, regresó a su universidad como profesora. Mientras enseñaba, también se convirtió en mangaka profesional para BL. Trabajos publicados en serie: “Erotic Virus Infected Boy” Publicado en la web durante 4 años y luego publicado como tankobon. “ADEL33” Publicado en el cómic digital Comipo durante 2 años.",
-        },
-        artist7: {
-            artistName: "Ameya Haruyuki",
-            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
-            artistPresentation: "Trabaja como artista, escritor y compositor de Manga de fantasía de estilo japonés inspirado en la historia, la cultura y los festivales japoneses.",
-        },
-        artist8: {
-            artistName: "Takasugikou",
-            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
-            artistPresentation: "Desde 2004 trabaja en el juego de rol de mesa 'GunDog' y en el juego de cartas coleccionables 'Sangokushi Taisen'. Hizo su debut como artista de manga en la revista de la editorial Hutaba. Desde entonces ha trabajado en muchas serializaciones de varias revistas. Sus obras 「Bentenbashi-minamishotengai jyoshi proress」「Shitsuji to watashi no mainichi gohan」「Otsukaredesune Kyoko-san」",
         },
     },
     newsPage: {
