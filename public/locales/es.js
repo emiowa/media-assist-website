@@ -12,6 +12,7 @@ export default{
         indexServiceList3: 'Soporte para la gestión de sitios web',
         indexServiceList4: 'Asesoría sobre cotización y presentación a empresas productoras de video, etc',
         indexServiceList5: 'Soporte técnico de IT',
+        indexArtistsSeeMoreButton: 'Ver todos los artistas',
         indexNewsReadMoreButton: 'Leer más',
     },
     aboutPage: {
@@ -54,12 +55,12 @@ export default{
     artistInfo: {
         artist1: {
             artistName: "Alala",
-            categoryName: ["Ilustrador", "Diseñador"],
+            categoryName: ["Ilustrador", "Artista Manga", "Diseñador"],
             artistPresentation: "Nacido en la ciudad de Saga, reside actualmente en Chiba, Japón. Graduado del Departamento de Manga e Ilustración de Yoyogi Animation School en Fukuoka. Ganó en dos ocaciones el premio a mejor artista de la Revista Juvenil. Mientras trabaja como oficinista, también trabaja como ilustrador y publica encargos y fan art en las redes sociales.",
         },
         artist2: {
             artistName: "QUESTION No.6",
-            categoryName: ["Ilustrador", "Diseñador"],
+            categoryName: ["Ilustrador", "Artista Manga", "Diseñador"],
             artistPresentation: "QUESTION No.6 es un Ilustrador con trabajos representativos los cuáles incluyen las portadas de los dramas de la BBC 'Doctor Who' y los cómics 'Sherlock' (Titan Comics). En Japón, trabaja principalmente en ilustraciones publicitarias y diseños de productos.",
         },
         artist3: {
@@ -71,6 +72,16 @@ export default{
             artistName: "Sanukinaoya",
             categoryName: ["Ilustrador", "Artista Manga", "Animador"],
             artistPresentation: "Ilustrador de la ciudad de Kyoto. Trabaja en ilustraciones para libros, música, películas, revistas, etc. Está a cargo del arte de la banda japonesa Homecomings y ha publicado el manga 'CONFUSED' con el guitarrista Yuki Fukutomi. Manejo de Photoshop, Illustrator y AfterEffects.",
+        },
+        artist5: {
+            artistName: "tokitokoro",
+            categoryName: ["Ilustrator", "Artista Manga"],
+            artistPresentation: "tokitokoro, utiliza el nombre【BANG】para sus trabajos en BL. Trabaja como artista de portadas para DC y como artista de interiores a lápiz y tinta para MARVEL. Dibuja con iPad, utiliza Procreate y otros programas.",
+        },
+        artist6: {
+            artistName: "yummy",
+            categoryName: ["Ilustrator", "Artista Manga"],
+            artistPresentation: "Nació en Osaka, actualmente vive en Okayama y trabaja como profesora en la Universidad de Ciencias y Artes de Kurashiki en Okayama. Se graduó en la Escuela de Diseño de Osaka. Después de trabajar como diseñadora gráfica durante 2 años, regresó a su universidad como profesora. Mientras enseñaba, también se convirtió en mangaka profesional para BL. Trabajos publicados en serie: “Erotic Virus Infected Boy” Publicado en la web durante 4 años y luego publicado como tankobon. “ADEL33” Publicado en el cómic digital Comipo durante 2 años.",
         },
     },
     newsPage: {

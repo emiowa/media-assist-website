@@ -13,7 +13,7 @@ const ArtistsCards = ({ id, artistName, illustration, portfolioPdf, category, ar
         </div>
         <div className='flex justify-center pt-4 pb-5 px-6 z-10 bg-slate-50 rounded-b-xl'>
             <div className='text-media-black'>
-                <h3 className='font-bold text-lg'>{t(`artistInfo.artist${index + 1}.artistName`)}</h3>
+                <h3 className='font-bold text-lg text-center'>{t(`artistInfo.artist${index + 1}.artistName`)}</h3>
                 <div>
                     {Array.isArray(category) ? (
                         <div className='w-full flex items-center justify-center gap-2'>

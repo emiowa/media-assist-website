@@ -38,8 +38,14 @@ export default function News({allPostsData}){
   };
 
   const filteredPosts = selectedCategory
-    ? allPostsData.filter(post => post.hashtagCategory && post.hashtagCategory.includes(selectedCategory))
-    : allPostsData;
+  ? allPostsData.filter((post, index) => {
+      const postCategories = t(`newsPosts.newsPost${index + 1}.newsHashtagCategory`); // This is an array
+      console.log(`Post ${index + 1} Hashtag Categories:`, postCategories);
+
+      return Array.isArray(postCategories) && postCategories.includes(selectedCategory);
+    })
+  : allPostsData;
+
 
   const categories = [
     t('newsPage.newsCategoryMediaAssist'),
@@ -87,6 +93,8 @@ export default function News({allPostsData}){
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  
+
     return(
       <div>
         <Layout>
@@ -112,8 +120,10 @@ export default function News({allPostsData}){
               <div className='container mx-auto pt-14 md:pt-28'>
                 <div className='flex justify-center lg:mx-20 xl:mx-48 pb-36'>
                   <div className='' ref={postsRef}>
-                    {filteredPosts.length > 0 ? (
-                      filteredPosts.map((post, index ) => (
+                  {filteredPosts.length > 0 ? (
+                    filteredPosts.map((post, index) => {
+                      const postHashtags = t(`newsPosts.newsPost${index + 1}.newsHashtagCategory`);
+                        return (
                           <NewsArticles
                             key={post.id}
                             id={post.id}
@@ -121,11 +131,12 @@ export default function News({allPostsData}){
                             newsTitle={t(`newsPosts.newsPost${index + 1}.newsTitle`)}
                             newsSummary={t(`newsPosts.newsPost${index + 1}.newsSummary`)}
                             newsContent={t(`newsPosts.newsPost${index + 1}.newsContent`)}
-                            newsHashtagCategory={t(`newsPosts.newsPost${index + 1}.newsHashtagCategory`)}
+                            hashtagCategory={postHashtags}
                             linkHref={post.linkHref}
                             index={index}
                           />
-                      ))
+                        );
+                      })
                     ) : (
                       <p className='text-center mt-4 text-media-black'>{noNewsMessage}</p>
                     )}

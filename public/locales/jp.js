@@ -12,6 +12,7 @@ export default {
         indexServiceList3: 'Webサイト運営支援',
         indexServiceList4: '映像制作会社のお見積り相談、<br>ご紹介 等',
         indexServiceList5: 'ITヘルプデスク支援',
+        indexArtistsSeeMoreButton: 'すべてのアーティストを見る',
         indexNewsReadMoreButton: 'もっと見る',
     },
     aboutPage: {
@@ -54,12 +55,12 @@ export default {
     artistInfo: {
         artist1: {
             artistName: "あらら",
-            categoryName: ["イラストレーター", "デザイナー"],
+            categoryName: ["イラストレーター", "マンガ家", "デザイナー"],
             artistPresentation: "イラストレーター、佐賀県佐賀市出身、千葉県市川市在住。代々木アニメーション学院福岡校マンガイラスト科卒。ヤングマガジン月例賞佳作２回。会社員として働きつつイラストレーターとして活動中、日々コミッション活動やファンアートをSNSに投稿している。",
         },
         artist2: {
             artistName: "QUESTION No.6",
-            categoryName: ["イラストレーター", "デザイナー"],
+            categoryName: ["イラストレーター", "マンガ家", "デザイナー"],
             artistPresentation: "イラストレーター。代表作はBBCドラマ「ドクター・フー」「シャーロック」コミックスの表紙（Titan Comics）など。日本国内では主に広告イラストやグッズデザインを手掛ける。",
         },
         artist3: {
@@ -71,6 +72,16 @@ export default {
             artistName: "サヌキナオヤ",
             categoryName: ["イラストレーター", "マンガ家", "アニメーター"],
             artistPresentation: "京都市出身のイラストレーター｡ 書籍､ 音楽や映画､ 雑誌などでイラストを手がける｡ 日本のバンドHomecomingsのアートワークを担当しており､ ギターの福富優樹とはマンガ『CONFUSED』 を出版している｡ 使用機材Photoshop、Illustrator、AfterEffects",
+        },
+        artist5: {
+            artistName: "tokitokoro",
+            categoryName: ["イラストレーター", "マンガ家"],
+            artistPresentation: "漫画家/イラストレーター DCコミックスにてカバー、MARVELコミックスにてインテリア Pencil &Inkを担当　その方BL名義【BANG】としても活動中　使用ツールiPadプロクリエイト等",
+        },
+        artist6: {
+            artistName: "yummy",
+            categoryName: ["イラストレーター", "マンガ家"],
+            artistPresentation: "大阪生まれ岡山在住。大阪デザイナー専門学校卒業後、２年間グラフィックデザイナーとして従事。その後母校である大阪デザイナー専門学校でアシスタント教員、そこから5年専任教員として働く。その後BLマンガ家としてデビューし大阪の専門学校の講師をしながら４年間web連載をし単行本「エロウィルス感染少年」を発行。その後BL、TLマンガ、Vtuberのキャラデザなどし、２０２２年からcomipoで「ADEL33」を2年連載。現在は岡山の倉敷芸術科学大学で講師をしながら２０２５年より新連載準備中。",
         },
     },
     newsPage: {
@@ -86,7 +97,7 @@ export default {
         newsPost1: {
             newsTitle: "社名、所在地、シンボル及びロゴタイプ変更のお知らせ",
             newsSummary: "平素より当サイトへのご訪問をいただき有難うございます。このたび、株式会社ICDSメディアアシストは映像メディア制作支援業務のほか、新たにコミック・文芸分野のクリエーター支援業務を担うこととなりました。社名及びロケーション、イメージをよりアクセスしやすく親しみのあるものへ見直しを図り、2024年6月13日を以って下記の通り変更を行いましたことをお知らせいたします。社員一同、ご関係の皆さまとの連携・協力を深め、全力を挙げて社業に努めて参りたく存じます。引き続きのご愛顧を賜れますよう何卒宜しくお願い致します。",
-            newsHashtagCategory: ["#メディアアシスト"],
+            newsHashtagCategory: ["＃メディアアシスト"],
             newsContent: "<br>●社名及び所在地<br>旧）<br>株式会社ICDSメディアアシスト<br>〒102-0083　東京都千代田区麹町3丁目6-5<br>03-6555-2502<br>新)<br>株式会社メディアアシスト<br>〒170-6045　東京都豊島区東池袋3丁目1-1<br>03-5957-7244<br><br>●シンボルマーク及びロゴタイプ<br>旧)<br><img src='../icds-media-assist-logo.png' width='200' /><br>新)<br><img src='../media-assist-new-logo.png' width='200' />",
         },
     },

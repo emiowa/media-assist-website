@@ -36,11 +36,11 @@ const NewsArticles = ({ id, linkHref, newsContent, hashtagCategory, index }) => 
             {Array.isArray(hashtagCategory) ? (
               <div className=''>
                 {hashtagCategory.map((hashtag, hashtagIndex) => (
-                  <p key={hashtagIndex} className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{t(`newsPosts.newsPost${index + 1}.newsHashtagCategory[${hashtagIndex}]`, hashtag)}</p>
+                  <p key={hashtagIndex} className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{hashtag}</p>
                 ))}
               </div>
             ) : (
-              <p className='mt-10 md:mt-0 text-slate-400 p-2 mr-2 text-sm border border-slate-300 rounded-md dark:text-slate-500 dark:border-slate-400'>{t(`newsPosts.newsPost${index + 1}.newsHashtagCategory`)}</p>
+              <p className='hidden'>{hashtagCategory}</p>
             )}
         </div>
           {linkHref && (

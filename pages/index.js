@@ -44,18 +44,18 @@ export default function Home({allPostsData, featuredArtists}){
     const router = useRouter();
     const { t } = useTranslation();
 
-    const animation3ContainerLight = useRef(null);
-    const animation3ContainerDark = useRef(null);
+    const animation4ContainerLight = useRef(null);
+    const animation4ContainerDark = useRef(null);
     const [isLottieLoadedLight, setIsLottieLoadedLight] = useState(false);
     const [isLottieLoadedDark, setIsLottieLoadedDark] = useState(false);
 
     useEffect(() => {
         const animLight = lottie.loadAnimation({
-            container: animation3ContainerLight.current,
+            container: animation4ContainerLight.current,
             render: 'svg',
             loop: true,
             autoplay: true,
-            path: '/animations/MA-website-animation3json.json'
+            path: '/animations/MA-website-animation4json.json'
         });
         animLight.addEventListener('DOMLoaded', () => setIsLottieLoadedLight(true));
 
@@ -64,11 +64,11 @@ export default function Home({allPostsData, featuredArtists}){
 
     useEffect(() => {
         const animDark = lottie.loadAnimation({
-            container: animation3ContainerDark.current,
+            container: animation4ContainerDark.current,
             render: 'svg',
             loop: true,
             autoplay: true,
-            path: '/animations/MA-website-animation3json-dark-version.json'
+            path: '/animations/MA-website-animation4json-dark-version.json'
         });
         animDark.addEventListener('DOMLoaded', () => setIsLottieLoadedDark(true));
 
@@ -154,13 +154,13 @@ export default function Home({allPostsData, featuredArtists}){
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
-                            <div ref={animation3ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden">
+                            <div ref={animation4ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden">
                                 {!isLottieLoadedLight && (
                                     <div style={{width: '600px', height: '400px', backgroundColor: '#f0f0f0',}} />
                                 )}
                             </div>
                             {/* Animation for dark mode */}
-                            <div ref={animation3ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block">
+                            <div ref={animation4ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block">
                                 {!isLottieLoadedDark && (
                                     <div style={{width: '600px', height: '400px', backgroundColor: '#2c2c2c',}} />
                                 )}
@@ -220,6 +220,14 @@ export default function Home({allPostsData, featuredArtists}){
                                         />
                                     </div>
                                 ))}
+                            </div>
+                            <div className='flex justify-center pt-0 pb-16'>
+                                <button onClick={artistsPageButton} className='text-media-black flex border border-media-black bg-transparent rounded-full py-2 px-4 hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
+                                    <span className=''>{t('homePage.indexArtistsSeeMoreButton')}</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <div className='container mx-auto animateNotActive' ref={fadeInUpRef2}>

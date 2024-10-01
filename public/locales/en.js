@@ -12,6 +12,7 @@ export default {
         indexServiceList3: 'Website management support',
         indexServiceList4: 'Consultation on quotation and introduction to video production companies, etc',
         indexServiceList5: 'IT help desk support',
+        indexArtistsSeeMoreButton: 'See all the artists',
         indexNewsReadMoreButton: 'Read more',
     },
     aboutPage: {
@@ -54,12 +55,12 @@ export default {
     artistInfo: {
         artist1: {
             artistName: "Alala",
-            categoryName: ["Illustrator", "Designer"],
+            categoryName: ["Illustrator", "Manga Artist", "Designer"],
             artistPresentation: "Born in Saga, living in Chiba Japan. Learned Manga and Illustration at Yoyogi Animation School in Fukuoka. Won the Monthly prize for good artists of Young Magazine twice. While working for the firm, posting fan arts works on SNS as well."
         },
         artist2: {
             artistName: "QUESTION No.6",
-            categoryName: ["Illustrator", "Designer"],
+            categoryName: ["Illustrator", "Manga Artist", "Designer"],
             artistPresentation: "QUESTION No.6 is an illustrator who has a wide range of experience in Japan, working on illustrations for advertisement and design for merchandise. Also working abroad on Titan Comic cover of ‘Doctor Who‘ and 'SHERLOCK' on BBC drama series.",
         },
         artist3: {
@@ -71,6 +72,16 @@ export default {
             artistName: "Sanukinaoya",
             categoryName: ["Illustrator", "Manga Artist", "Animator"],
             artistPresentation: "Born in Kyoto Japan. Drawing illustration for Books, magazines, mucic and movie works. Published manga 'CONFUSED', collaborating with Yuuki Fukutomi, who is the guitarist of Japanese music band 'Homecomings', while working on their music art works. Using Photoshop, Illustrator, AfterEffects.",
+        },
+        artist5: {
+            artistName: "tokitokoro",
+            categoryName: ["Illustrator", "Manga Artist"],
+            artistPresentation: "tokitokoro, using the name【BANG】for BL works. Works as a cover artist for DC and the interior pencil and ink artist for MARVEL. Drawing with iPad, using Procreate and other softwares.",
+        },
+        artist6: {
+            artistName: "yummy",
+            categoryName: ["Illustrator", "Manga Artist"],
+            artistPresentation: "Born in Osaka, currently living in Okayama and working as a lecturer at Kurashiki University of Science and the Arts in Okayama. Graduated from Osaka Design College. After working as a Graphic Designer for 2 years, she has gone back to her college as a lecturer. While teaching she has also become professional manga-ka for BL. Serialized published works: “Erotic Virus Infected Boy” Serlized on the web for 4 years and later published as a tankobon. “ADEL33” Published on digital comic Comipo for 2 years.",
         },
     },
     newsPage: {
