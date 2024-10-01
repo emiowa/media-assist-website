@@ -83,6 +83,16 @@ export default{
             categoryName: ["Ilustrator", "Artista Manga"],
             artistPresentation: "Nació en Osaka, actualmente vive en Okayama y trabaja como profesora en la Universidad de Ciencias y Artes de Kurashiki en Okayama. Se graduó en la Escuela de Diseño de Osaka. Después de trabajar como diseñadora gráfica durante 2 años, regresó a su universidad como profesora. Mientras enseñaba, también se convirtió en mangaka profesional para BL. Trabajos publicados en serie: “Erotic Virus Infected Boy” Publicado en la web durante 4 años y luego publicado como tankobon. “ADEL33” Publicado en el cómic digital Comipo durante 2 años.",
         },
+        artist7: {
+            artistName: "Ameya Haruyuki",
+            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
+            artistPresentation: "Trabaja como artista, escritor y compositor de Manga de fantasía de estilo japonés inspirado en la historia, la cultura y los festivales japoneses.",
+        },
+        artist8: {
+            artistName: "Takasugikou",
+            categoryName: ["Illustrador", "Artista Manga", "Diseñador"],
+            artistPresentation: "Desde 2004 trabaja en el juego de rol de mesa 'GunDog' y en el juego de cartas coleccionables 'Sangokushi Taisen'. Hizo su debut como artista de manga en la revista de la editorial Hutaba. Desde entonces ha trabajado en muchas serializaciones de varias revistas. Sus obras 「Bentenbashi-minamishotengai jyoshi proress」「Shitsuji to watashi no mainichi gohan」「Otsukaredesune Kyoko-san」",
+        },
     },
     newsPage: {
         newsCategoryMediaAssist: '#MediaAssist',
