@@ -69,7 +69,7 @@ export default {
             artistPresentation: "QUESTION No.6 is an illustrator who has a wide range of experience in Japan, working on illustrations for advertisement and design for merchandise. Also working abroad on Titan Comic cover of ‘Doctor Who‘ and 'SHERLOCK' on BBC drama series.",
         },
         artist4: {
-            artistName: "Sanukinaoya",
+            artistName: "sanukinaoya",
             categoryName: ["Illustrator", "Manga Artist", "Animator"],
             artistPresentation: "Born in Kyoto Japan. Drawing illustration for Books, magazines, mucic and movie works. Published manga 'CONFUSED', collaborating with Yuuki Fukutomi, who is the guitarist of Japanese music band 'Homecomings', while working on their music art works. Using Photoshop, Illustrator, AfterEffects.",
         },
@@ -150,12 +150,6 @@ export default {
         modalPortfolioButton: 'View portfolio',
         modalCopyrightWarning: '*All copyrights belong to their respective owners',
     },
-    
-    
-    
-    
-    
-    
     articleTitle1: 'Notice of change of company name, location, symbol and logotype',
     articleSummary1: 'Thank you for visiting our website. In addition to supporting video media production, ICDS Media Assist Co., Ltd. will now be providing support to creators in the fields of comics and literature. We have revised our company name, location, and image to make them more accessible and familiar, and we are pleased to inform you that the following changes have been made as of June 13, 2024. All our employees are looking forward to deepening our collaboration and cooperation with all stakeholders and doing their best to carry out our business. We look forward to your continued support.',
     articleHashtagCategory1: ["#MediaAssist"],
