@@ -149,6 +149,7 @@ export default {
         modalAboutArtist: 'アーティストについて：',
         modalPortfolioButton: 'ポートフォリオ見る',
         modalCopyrightWarning: '*All copyrights belong to their respective owners',
+        modalProhibitationWarning: '*当サイトの作品の無断転載を禁止します',
     },
     articleTitle1: '社名、所在地、シンボル及びロゴタイプ変更のお知らせ',
     articleSummary1: '平素より当サイトへのご訪問をいただき有難うございます。このたび、株式会社ICDSメディアアシストは映像メディア制作支援業務のほか、新たにコミック・文芸分野のクリエーター支援業務を担うこととなりました。社名及びロケーション、イメージをよりアクセスしやすく親しみのあるものへ見直しを図り、2024年6月13日を以って下記の通り変更を行いましたことをお知らせいたします。社員一同、ご関係の皆さまとの連携・協力を深め、全力を挙げて社業に努めて参りたく存じます。引き続きのご愛顧を賜れますよう何卒宜しくお願い致します。',

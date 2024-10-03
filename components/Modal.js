@@ -42,7 +42,11 @@ const Modal = ({ isOpen, onClose, artist }) => {
                     </svg>
                 </button>
             </div>
-            <p className='text-xs text-media-black pt-3 md:pt-8'>{t('modalComponent.modalCopyrightWarning')}</p>
+            <div className='text-xs text-media-black pt-3 md:pt-8'>
+              <p>{t('modalComponent.modalCopyrightWarning')}</p>
+              <p>{t('modalComponent.modalProhibitationWarning')}</p>
+            </div>
+            
           </>
         )}
       </div>

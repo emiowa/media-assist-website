@@ -149,6 +149,7 @@ export default{
         modalAboutArtist: 'Sobre el artista:',
         modalPortfolioButton: 'Ver portafolio',
         modalCopyrightWarning: '*Todos los derechos de autor corresponden a cada uno de los artistas',
+        modalProhibitationWarning: '*Prohibida la reproducción no autorizada',
     },
     titleArticle1: 'Aviso de cambio de nombre de la compañía, localización, símbolo y logotipo',
     articleSummary1: 'Gracias por visitar nuestro sitio web. Además de brindar apoyo a la producción de medios audiovisuales, ICDS Media Assist Co., Ltd. ahora brindará apoyo a los creadores en los campos de cómic y literatura. Hemos revisado el nombre, la localización y la imagen de nuestra empresa para que sean más accesibles y familiares, y nos complace informarle que se han realizado los siguientes cambios a partir del 13 de junio de 2024. Todos nuestros empleados esperan profundizar nuestra colaboración y cooperación con todas las partes interesadas y hacer todo lo posible para llevar a cabo nuestro negocio. Esperamos seguir contando con su apoyo.',
