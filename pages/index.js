@@ -154,13 +154,13 @@ export default function Home({allPostsData, featuredArtists}){
                         </div>
                         <div className='flex justify-center items-center pt-10 md:pt-0'>
                             {/* Animation for light mode */}
-                            <div ref={animation4ContainerLight} className="hidden md:block mx-auto md:w-8/12 dark:hidden">
+                            <div ref={animation4ContainerLight} className="hidden md:block mx-auto md:w-7/12 dark:hidden">
                                 {!isLottieLoadedLight && (
                                     <div style={{width: '600px', height: '400px', backgroundColor: '#f0f0f0',}} />
                                 )}
                             </div>
                             {/* Animation for dark mode */}
-                            <div ref={animation4ContainerDark} className="hidden mx-auto md:w-8/12 dark:md:block">
+                            <div ref={animation4ContainerDark} className="hidden mx-auto md:w-7/12 dark:md:block">
                                 {!isLottieLoadedDark && (
                                     <div style={{width: '600px', height: '400px', backgroundColor: '#2c2c2c',}} />
                                 )}
