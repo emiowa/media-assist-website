@@ -222,7 +222,7 @@ export default function Home({allPostsData, featuredArtists}){
                                 ))}
                             </div>
                             <div className='flex justify-center pt-0 pb-16'>
-                                <button onClick={artistsPageButton} className='text-media-black flex border border-media-black bg-transparent rounded-full py-2 px-4 hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
+                                <button onClick={artistsPageButton} className='text-media-black flex border border-media-black bg-transparent rounded-full py-2 px-4 hover:bg-indigo-600 hover:border-indigo-600 hover:text-media-white dark:text-media-white dark:border-media-white dark:hover:border-indigo-500 dark:hover:bg-indigo-500'>
                                     <span className=''>{t('homePage.indexArtistsSeeMoreButton')}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
